@@ -3,26 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Darshan Sonawane — Product Strategy × Quantitative Finance</title>
-  <meta name="description" content="Portfolio of Darshan Sonawane: quantitative finance and product strategy work at the intersection of fintech, machine learning, and 0-to-1 product building." />
-  <meta name="theme-color" content="#0a0a0a" />
+  <title>Darshan Sonawane — Product Strategy in Fintech</title>
+  <meta name="description" content="Portfolio of Darshan Sonawane — product strategy, market entry, and 0-to-1 business cases for global fintech, grounded in quantitative analysis." />
+  <meta name="theme-color" content="#FAF5ED" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --bg: #0a0a0a;
-      --bg-elevated: #111111;
-      --border: #1d1d1d;
-      --border-strong: #2a2a2a;
-      --text: #f5f1ea;
-      --text-muted: #8a857d;
-      --text-dim: #5a564f;
-      --accent: #ff6b5b;
-      --accent-gold: #f5c26b;
-      --serif: 'Instrument Serif', Georgia, serif;
+      --bg: #FAF5ED;
+      --bg-soft: #F4EDDF;
+      --bg-card: #FFFFFF;
+      --border: #E8DFD2;
+      --border-strong: #D5C8B6;
+      --text: #0F0F0F;
+      --text-soft: #2A2520;
+      --text-muted: #6B625A;
+      --text-dim: #A39989;
+
+      --accent: #FF4D2E;          /* vibrant orange-red */
+      --accent-deep: #E03515;
+      --accent-soft: #FFE4DC;
+
+      --blue: #2E4FFF;            /* electric blue */
+      --blue-soft: #DEE5FF;
+
+      --amber: #FFB627;           /* sunny amber */
+      --amber-soft: #FFF1D1;
+
+      --mint: #00B27A;            /* secondary highlight */
+
+      --serif: 'Fraunces', 'Times New Roman', Georgia, serif;
       --sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
       --mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
       --max-width: 1240px;
@@ -30,7 +43,6 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -43,16 +55,10 @@
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
     }
-
     a { color: inherit; text-decoration: none; }
 
-    /* ---------- Layout primitives ---------- */
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 var(--gutter);
-    }
-
+    /* ---------- Layout ---------- */
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--gutter); }
     section {
       padding: clamp(80px, 12vw, 160px) 0;
       border-top: 1px solid var(--border);
@@ -62,81 +68,62 @@
 
     /* ---------- Top nav ---------- */
     .nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
+      position: fixed; top: 0; left: 0; right: 0;
       z-index: 100;
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      background: rgba(10, 10, 10, 0.65);
+      background: rgba(250, 245, 237, 0.78);
       border-bottom: 1px solid var(--border);
     }
     .nav-inner {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 16px var(--gutter);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: flex; align-items: center; justify-content: space-between;
     }
     .nav-brand {
       font-family: var(--serif);
       font-size: 22px;
+      font-weight: 500;
       letter-spacing: -0.01em;
     }
-    .nav-brand .dot {
-      color: var(--accent);
-    }
+    .nav-brand .dot { color: var(--accent); }
     .nav-links {
-      display: flex;
-      gap: 28px;
-      font-size: 13px;
-      letter-spacing: 0.04em;
+      display: flex; gap: 28px;
+      font-size: 13px; letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--text-muted);
     }
     .nav-links a { transition: color 0.2s ease; }
-    .nav-links a:hover { color: var(--text); }
-    @media (max-width: 720px) {
-      .nav-links { display: none; }
-    }
+    .nav-links a:hover { color: var(--accent); }
+    @media (max-width: 720px) { .nav-links { display: none; } }
 
-    /* ---------- Section labels (deck slide indicator) ---------- */
+    /* ---------- Section labels ---------- */
     .section-label {
-      display: flex;
-      align-items: baseline;
-      gap: 16px;
+      display: flex; align-items: baseline; gap: 16px;
       font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: 0.12em;
+      font-size: 12px; letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--text-dim);
       margin-bottom: 32px;
     }
-    .section-label .num {
-      color: var(--accent);
-      font-weight: 500;
-    }
-    .section-label .rule {
-      flex: 1;
-      height: 1px;
-      background: var(--border-strong);
-    }
+    .section-label .num { color: var(--accent); font-weight: 500; }
+    .section-label .rule { flex: 1; height: 1px; background: var(--border-strong); }
 
-    /* ---------- Display headlines (action titles) ---------- */
+    /* ---------- Action titles ---------- */
     .action-title {
       font-family: var(--serif);
-      font-weight: 400;
-      letter-spacing: -0.02em;
-      line-height: 1.05;
+      font-weight: 500;
+      font-variation-settings: 'opsz' 96, 'SOFT' 50;
+      letter-spacing: -0.025em;
+      line-height: 1.02;
       font-size: clamp(40px, 6.4vw, 88px);
       margin-bottom: 24px;
+      color: var(--text);
     }
-    .action-title em {
-      font-style: italic;
-      color: var(--accent);
-    }
+    .action-title em { font-style: italic; color: var(--accent); font-weight: 400; }
     .action-title .underline {
-      background: linear-gradient(transparent 60%, rgba(255, 107, 91, 0.25) 60%);
+      background: linear-gradient(transparent 62%, var(--amber-soft) 62%);
       padding: 0 4px;
     }
     .sub-headline {
@@ -150,134 +137,141 @@
     .hero {
       min-height: 100vh;
       padding: 140px 0 80px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative; overflow: hidden;
     }
     .hero::before {
       content: '';
       position: absolute;
-      top: -20%; right: -10%;
-      width: 60vw; height: 60vw;
-      max-width: 800px; max-height: 800px;
-      background: radial-gradient(circle, rgba(255, 107, 91, 0.13) 0%, transparent 60%);
-      pointer-events: none;
-      z-index: 0;
+      top: -10%; right: -15%;
+      width: 70vw; height: 70vw;
+      max-width: 900px; max-height: 900px;
+      background: radial-gradient(circle, rgba(255, 77, 46, 0.16) 0%, transparent 55%);
+      pointer-events: none; z-index: 0;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -20%; left: -10%;
+      width: 50vw; height: 50vw;
+      max-width: 700px; max-height: 700px;
+      background: radial-gradient(circle, rgba(46, 79, 255, 0.10) 0%, transparent 60%);
+      pointer-events: none; z-index: 0;
     }
     .hero > * { position: relative; z-index: 1; }
 
     .hero-meta {
-      display: flex;
-      gap: 32px;
-      flex-wrap: wrap;
+      display: flex; gap: 32px; flex-wrap: wrap;
       font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: 0.1em;
+      font-size: 12px; letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text-dim);
+      color: var(--text-muted);
       margin-bottom: 56px;
     }
     .hero-meta span::before {
-      content: '◆ ';
-      color: var(--accent);
-      margin-right: 6px;
+      content: '●'; color: var(--accent); margin-right: 8px; font-size: 8px;
     }
 
     .hero-headline {
       font-family: var(--serif);
-      font-weight: 400;
-      font-size: clamp(56px, 9vw, 132px);
-      line-height: 0.98;
-      letter-spacing: -0.03em;
+      font-weight: 500;
+      font-variation-settings: 'opsz' 144, 'SOFT' 50;
+      font-size: clamp(56px, 9.5vw, 144px);
+      line-height: 0.94;
+      letter-spacing: -0.035em;
       margin-bottom: 40px;
       max-width: 1100px;
+      color: var(--text);
     }
     .hero-headline em {
       font-style: italic;
       color: var(--accent);
+      font-weight: 400;
+    }
+    .hero-headline .hl {
+      background: linear-gradient(transparent 65%, var(--amber-soft) 65%);
     }
 
     .hero-tagline {
       font-size: clamp(17px, 1.6vw, 22px);
-      color: var(--text-muted);
-      max-width: 640px;
-      line-height: 1.55;
+      color: var(--text-soft);
+      max-width: 720px;
+      line-height: 1.5;
       margin-bottom: 56px;
     }
 
     .hero-footer {
-      display: flex;
-      gap: 40px;
-      align-items: center;
-      flex-wrap: wrap;
-      font-size: 13px;
-      letter-spacing: 0.04em;
+      display: flex; gap: 40px; align-items: center; flex-wrap: wrap;
+      font-size: 13px; letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--text-muted);
     }
-    .hero-footer .cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 22px;
-      border: 1px solid var(--text);
-      color: var(--text);
+    .cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 24px;
+      background: var(--accent);
+      color: #fff;
       border-radius: 999px;
-      font-size: 13px;
-      letter-spacing: 0.06em;
+      font-size: 13px; letter-spacing: 0.06em;
       transition: all 0.25s ease;
+      font-weight: 500;
     }
-    .hero-footer .cta:hover {
-      background: var(--text);
-      color: var(--bg);
-    }
-    .hero-footer .cta .arrow {
-      transition: transform 0.25s ease;
-    }
-    .hero-footer .cta:hover .arrow {
-      transform: translateX(4px);
-    }
+    .cta:hover { background: var(--accent-deep); transform: translateY(-2px); }
+    .cta .arrow { transition: transform 0.25s ease; }
+    .cta:hover .arrow { transform: translateX(4px); }
 
     /* ---------- Executive Summary ---------- */
     .exec-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
+      gap: 24px;
       margin-top: 56px;
     }
-    @media (max-width: 880px) {
-      .exec-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 880px) { .exec-grid { grid-template-columns: 1fr; } }
+
     .exec-card {
       padding: 36px 32px;
-      background: var(--bg-elevated);
+      background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 4px;
-      transition: border-color 0.3s ease, transform 0.3s ease;
+      border-radius: 8px;
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
+    .exec-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 4px;
+      background: var(--accent);
+    }
+    .exec-card:nth-child(2)::before { background: var(--blue); }
+    .exec-card:nth-child(3)::before { background: var(--amber); }
     .exec-card:hover {
-      border-color: var(--border-strong);
       transform: translateY(-4px);
+      box-shadow: 0 18px 40px -20px rgba(15, 15, 15, 0.18);
     }
     .exec-card .num {
       font-family: var(--mono);
       font-size: 11px;
       letter-spacing: 0.15em;
       color: var(--accent);
-      margin-bottom: 24px;
+      margin-bottom: 20px;
+      padding-top: 8px;
     }
+    .exec-card:nth-child(2) .num { color: var(--blue); }
+    .exec-card:nth-child(3) .num { color: var(--amber); }
     .exec-card h3 {
       font-family: var(--serif);
-      font-weight: 400;
-      font-size: 28px;
+      font-weight: 500;
+      font-size: 26px;
       line-height: 1.15;
-      letter-spacing: -0.015em;
+      letter-spacing: -0.02em;
       margin-bottom: 14px;
+      color: var(--text);
     }
     .exec-card p {
-      font-size: 15px;
+      font-size: 14.5px;
       color: var(--text-muted);
       line-height: 1.6;
     }
@@ -289,14 +283,16 @@
       border-top: 1px solid var(--border-strong);
       border-bottom: 1px solid var(--border-strong);
       margin-top: 56px;
+      background: var(--bg-card);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 0 var(--border);
     }
-    @media (max-width: 880px) {
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    }
+    @media (max-width: 880px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
     .stat {
       padding: 40px 28px;
       border-right: 1px solid var(--border);
-      text-align: left;
+      position: relative;
     }
     .stat:last-child { border-right: none; }
     @media (max-width: 880px) {
@@ -306,14 +302,15 @@
     .stat .value {
       font-family: var(--serif);
       font-size: clamp(48px, 5.5vw, 72px);
-      font-weight: 400;
-      letter-spacing: -0.03em;
+      font-weight: 500;
+      font-variation-settings: 'opsz' 96;
+      letter-spacing: -0.035em;
       line-height: 1;
       color: var(--text);
       margin-bottom: 12px;
     }
     .stat .value sup {
-      font-size: 0.5em;
+      font-size: 0.45em;
       color: var(--accent);
       vertical-align: super;
       margin-left: 4px;
@@ -326,25 +323,94 @@
       color: var(--text-muted);
     }
 
-    /* ---------- Project tracks ---------- */
-    .track {
+    /* ---------- Featured chart ---------- */
+    .featured {
       margin-top: 80px;
+      padding: 48px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 2px 0 var(--border);
     }
-    .track-header {
+    @media (max-width: 720px) { .featured { padding: 28px 20px; } }
+    .featured-header {
+      display: flex; align-items: baseline; gap: 18px;
+      margin-bottom: 8px;
+    }
+    .featured-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 4px 10px;
+      background: var(--accent-soft);
+      border-radius: 3px;
+    }
+    .featured h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-variation-settings: 'opsz' 72;
+      font-size: clamp(24px, 3vw, 36px);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .featured h3 em { color: var(--accent); font-style: italic; }
+    .featured-sub {
+      color: var(--text-muted);
+      font-size: 14.5px;
+      max-width: 700px;
+      margin-bottom: 32px;
+      line-height: 1.55;
+    }
+    .featured-chart {
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+      display: block;
+    }
+    .featured-footer {
       display: flex;
-      align-items: baseline;
-      gap: 24px;
-      margin-bottom: 40px;
-      padding-bottom: 24px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .featured-footer .legend {
+      display: flex; gap: 18px; flex-wrap: wrap;
+    }
+    .featured-footer .legend span {
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .legend .dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* ---------- Project tracks ---------- */
+    .track { margin-top: 80px; }
+    .track-header {
+      display: flex; align-items: baseline; gap: 24px;
+      margin-bottom: 40px; padding-bottom: 24px;
       border-bottom: 1px solid var(--border-strong);
     }
     .track-name {
       font-family: var(--serif);
-      font-size: clamp(28px, 3.6vw, 40px);
-      font-weight: 400;
-      letter-spacing: -0.015em;
+      font-size: clamp(28px, 3.6vw, 44px);
+      font-weight: 500;
+      font-variation-settings: 'opsz' 72;
+      letter-spacing: -0.025em;
+      color: var(--text);
     }
-    .track-name em { color: var(--accent); font-style: italic; }
+    .track-name em { color: var(--accent); font-style: italic; font-weight: 400; }
     .track-meta {
       font-family: var(--mono);
       font-size: 11px;
@@ -353,125 +419,144 @@
       color: var(--text-dim);
       margin-left: auto;
     }
-    @media (max-width: 720px) {
-      .track-meta { display: none; }
-    }
+    @media (max-width: 720px) { .track-meta { display: none; } }
 
     .project-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
     }
-    @media (max-width: 880px) {
-      .project-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 880px) { .project-grid { grid-template-columns: 1fr; } }
 
     .project {
       padding: 36px 32px;
-      background: var(--bg-elevated);
+      background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 4px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      transition: border-color 0.3s ease, transform 0.3s ease;
-      position: relative;
-      overflow: hidden;
+      border-radius: 8px;
+      display: flex; flex-direction: column; gap: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative; overflow: hidden;
     }
     .project::before {
       content: '';
-      position: absolute;
-      top: 0; left: 0;
-      height: 2px;
-      width: 0;
+      position: absolute; top: 0; left: 0;
+      height: 3px; width: 0;
       background: var(--accent);
       transition: width 0.4s ease;
     }
     .project:hover {
-      border-color: var(--border-strong);
       transform: translateY(-4px);
+      box-shadow: 0 18px 40px -22px rgba(15, 15, 15, 0.18);
     }
     .project:hover::before { width: 100%; }
 
     .project-tag {
-      display: inline-block;
+      display: inline-flex; align-items: center; gap: 8px;
       font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.12em;
+      font-size: 11px; letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--text-dim);
     }
+    .project-tag::before {
+      content: ''; width: 6px; height: 6px;
+      background: var(--accent); border-radius: 50%;
+    }
+    .project.blue .project-tag::before { background: var(--blue); }
+    .project.amber .project-tag::before { background: var(--amber); }
+
     .project-title {
       font-family: var(--serif);
       font-size: clamp(22px, 2.2vw, 28px);
-      font-weight: 400;
-      line-height: 1.2;
-      letter-spacing: -0.015em;
+      font-weight: 500;
+      font-variation-settings: 'opsz' 60;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--text);
     }
-    .project-title em { color: var(--accent); font-style: italic; }
+    .project-title em { color: var(--accent); font-style: italic; font-weight: 400; }
+    .project.blue .project-title em { color: var(--blue); }
+    .project.amber .project-title em { color: var(--amber); }
+
     .project-desc {
       font-size: 14.5px;
       color: var(--text-muted);
       line-height: 1.6;
     }
-    .project-metrics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 8px;
-      padding-top: 18px;
+
+    .project-viz {
+      margin-top: 4px;
+      padding: 14px 0;
       border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .project-viz svg { display: block; width: 100%; height: auto; }
+
+    .project-metrics {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      margin-top: 4px;
     }
     .metric-chip {
       font-family: var(--mono);
       font-size: 11px;
-      padding: 6px 10px;
-      background: rgba(255, 107, 91, 0.08);
-      color: var(--accent);
+      padding: 5px 9px;
+      background: var(--accent-soft);
+      color: var(--accent-deep);
       border-radius: 3px;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
+      font-weight: 500;
     }
+    .project.blue .metric-chip { background: var(--blue-soft); color: var(--blue); }
+    .project.amber .metric-chip { background: var(--amber-soft); color: #B8740B; }
+
     .project-meta {
-      display: flex;
-      justify-content: space-between;
+      display: flex; justify-content: space-between;
       font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.08em;
+      font-size: 11px; letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--text-dim);
       margin-top: auto;
-      padding-top: 14px;
+      padding-top: 12px;
     }
 
     /* ---------- Capabilities ---------- */
     .cap-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1.4fr 1fr 1fr;
       gap: 0;
       margin-top: 56px;
-      border-top: 1px solid var(--border-strong);
-      border-left: 1px solid var(--border-strong);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
     }
-    @media (max-width: 880px) {
-      .cap-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 880px) { .cap-grid { grid-template-columns: 1fr; } }
     .cap {
-      padding: 32px 28px;
-      border-right: 1px solid var(--border-strong);
-      border-bottom: 1px solid var(--border-strong);
+      padding: 36px 32px;
+      border-right: 1px solid var(--border);
     }
+    .cap:last-child { border-right: none; }
+    @media (max-width: 880px) {
+      .cap { border-right: none; border-bottom: 1px solid var(--border); }
+      .cap:last-child { border-bottom: none; }
+    }
+    .cap .ic {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .cap:nth-child(2) .ic { color: var(--blue); }
+    .cap:nth-child(3) .ic { color: var(--amber); }
     .cap h4 {
       font-family: var(--serif);
-      font-weight: 400;
-      font-size: 22px;
-      letter-spacing: -0.015em;
-      margin-bottom: 18px;
-    }
-    .cap h4 .ic {
-      color: var(--accent);
-      margin-right: 8px;
-      font-family: var(--mono);
-      font-size: 13px;
+      font-weight: 500;
+      font-variation-settings: 'opsz' 60;
+      font-size: 24px;
+      letter-spacing: -0.02em;
+      margin-bottom: 22px;
+      line-height: 1.2;
     }
     .cap ul {
       list-style: none;
@@ -482,36 +567,38 @@
     .cap ul li {
       font-family: var(--mono);
       font-size: 12px;
-      padding: 5px 10px;
-      background: transparent;
+      padding: 6px 10px;
+      background: var(--bg);
       border: 1px solid var(--border-strong);
       border-radius: 3px;
-      color: var(--text-muted);
+      color: var(--text-soft);
       letter-spacing: 0.02em;
     }
 
-    /* ---------- Background / Education ---------- */
+    /* ---------- Background ---------- */
     .bg-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 64px;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 56px;
       margin-top: 56px;
+      align-items: start;
     }
-    @media (max-width: 880px) {
-      .bg-grid { grid-template-columns: 1fr; gap: 48px; }
-    }
+    @media (max-width: 880px) { .bg-grid { grid-template-columns: 1fr; gap: 48px; } }
     .edu-block h3 {
       font-family: var(--serif);
-      font-size: 32px;
-      font-weight: 400;
-      letter-spacing: -0.015em;
+      font-weight: 500;
+      font-variation-settings: 'opsz' 60;
+      font-size: 30px;
+      letter-spacing: -0.02em;
       line-height: 1.2;
       margin-bottom: 6px;
     }
     .edu-block .institution {
-      font-size: 15px;
+      font-size: 14.5px;
       color: var(--text-muted);
       margin-bottom: 24px;
+      font-family: var(--mono);
+      letter-spacing: 0.02em;
     }
     .edu-block .detail-list {
       list-style: none;
@@ -520,29 +607,34 @@
       gap: 14px;
     }
     .edu-block .detail-list li {
-      font-size: 14px;
-      color: var(--text-muted);
-      padding-left: 20px;
+      font-size: 14.5px;
+      color: var(--text-soft);
+      padding-left: 22px;
       position: relative;
       line-height: 1.55;
     }
     .edu-block .detail-list li::before {
-      content: '◆';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-size: 8px;
-      top: 6px;
+      content: '';
+      position: absolute; left: 0; top: 9px;
+      width: 10px; height: 2px;
+      background: var(--accent);
     }
-
+    .awards-block {
+      padding: 28px 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
     .awards-block .award {
-      padding: 18px 0;
+      padding: 14px 0;
       border-bottom: 1px solid var(--border);
     }
-    .awards-block .award:last-child { border-bottom: none; }
+    .awards-block .award:last-child { border-bottom: none; padding-bottom: 0; }
+    .awards-block .award:first-child { padding-top: 0; }
     .awards-block .award-title {
       font-family: var(--serif);
-      font-size: 17px;
+      font-weight: 500;
+      font-size: 18px;
       letter-spacing: -0.01em;
       margin-bottom: 2px;
     }
@@ -562,27 +654,29 @@
     .contact::before {
       content: '';
       position: absolute;
-      bottom: -30%; left: -10%;
-      width: 50vw; height: 50vw;
-      max-width: 700px; max-height: 700px;
-      background: radial-gradient(circle, rgba(245, 194, 107, 0.10) 0%, transparent 60%);
+      bottom: -25%; right: -10%;
+      width: 60vw; height: 60vw;
+      max-width: 800px; max-height: 800px;
+      background: radial-gradient(circle, rgba(255, 182, 39, 0.20) 0%, transparent 60%);
       pointer-events: none;
     }
     .contact > * { position: relative; }
     .contact-title {
       font-family: var(--serif);
-      font-weight: 400;
-      font-size: clamp(48px, 7.5vw, 108px);
-      line-height: 1;
-      letter-spacing: -0.025em;
+      font-weight: 500;
+      font-variation-settings: 'opsz' 144, 'SOFT' 50;
+      font-size: clamp(48px, 8vw, 120px);
+      line-height: 0.96;
+      letter-spacing: -0.035em;
       margin-bottom: 32px;
+      color: var(--text);
     }
-    .contact-title em { font-style: italic; color: var(--accent); }
+    .contact-title em { font-style: italic; color: var(--accent); font-weight: 400; }
     .contact-sub {
-      font-size: clamp(16px, 1.5vw, 19px);
-      color: var(--text-muted);
-      max-width: 640px;
-      line-height: 1.6;
+      font-size: clamp(16px, 1.5vw, 20px);
+      color: var(--text-soft);
+      max-width: 680px;
+      line-height: 1.55;
       margin-bottom: 56px;
     }
 
@@ -590,22 +684,25 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 0;
-      border-top: 1px solid var(--border-strong);
-      border-left: 1px solid var(--border-strong);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 760px;
     }
-    @media (max-width: 720px) {
-      .contact-channels { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 720px) { .contact-channels { grid-template-columns: 1fr; } }
     .channel {
       padding: 28px 28px;
-      border-right: 1px solid var(--border-strong);
-      border-bottom: 1px solid var(--border-strong);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      border-right: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
       transition: background 0.25s ease;
     }
-    .channel:hover { background: var(--bg-elevated); }
+    .channel:last-child { border-right: none; }
+    @media (max-width: 720px) {
+      .channel { border-right: none; border-bottom: 1px solid var(--border); }
+      .channel:last-child { border-bottom: none; }
+    }
+    .channel:hover { background: var(--bg-soft); }
     .channel-info .label {
       font-family: var(--mono);
       font-size: 11px;
@@ -616,18 +713,17 @@
     }
     .channel-info .value {
       font-family: var(--serif);
-      font-size: 20px;
+      font-weight: 500;
+      font-size: 19px;
       letter-spacing: -0.01em;
     }
     .channel-arrow {
       font-family: var(--mono);
+      font-size: 18px;
       color: var(--text-muted);
       transition: transform 0.25s ease, color 0.25s ease;
     }
-    .channel:hover .channel-arrow {
-      transform: translateX(6px);
-      color: var(--accent);
-    }
+    .channel:hover .channel-arrow { transform: translateX(6px); color: var(--accent); }
 
     /* ---------- Footer ---------- */
     footer {
@@ -640,35 +736,22 @@
       color: var(--text-dim);
     }
     .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 var(--gutter);
-      flex-wrap: wrap;
-      gap: 12px;
+      flex-wrap: wrap; gap: 12px;
     }
 
     /* ---------- Scroll reveal ---------- */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.in-view {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: none; transition: none; }
       html { scroll-behavior: auto; }
     }
 
-    ::selection {
-      background: var(--accent);
-      color: var(--bg);
-    }
+    ::selection { background: var(--accent); color: #fff; }
   </style>
 </head>
 <body>
@@ -679,8 +762,8 @@
       <div class="nav-links">
         <a href="#summary">Summary</a>
         <a href="#metrics">Metrics</a>
+        <a href="#analysis">Analysis</a>
         <a href="#work">Work</a>
-        <a href="#capabilities">Capabilities</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -692,17 +775,17 @@
   <header id="cover" class="hero container">
     <div class="hero-meta">
       <span>Portfolio / 2026</span>
-      <span>Product Strategy × Quantitative Finance</span>
+      <span>Product Strategy in Fintech</span>
       <span>IIT Bombay</span>
     </div>
 
     <h1 class="hero-headline">
-      Quantitative <em>rigor</em><br />
-      meets product <em>strategy.</em>
+      Product strategy,<br />
+      built on <em>numbers.</em>
     </h1>
 
     <p class="hero-tagline">
-      I build the kind of analysis decisions are actually made on — alpha models that ship, market-entry cases that survive scrutiny, and 0&#8209;to&#8209;1 product bets backed by user research and unit economics.
+      I build the kind of analysis fintech decisions are actually made on — market-entry cases, vertical POVs, and 0-to-1 business cases backed by real user research, unit economics, and quantitative work that holds up under scrutiny.
     </p>
 
     <div class="hero-footer">
@@ -723,27 +806,27 @@
     </div>
 
     <h2 class="action-title reveal">
-      Three reasons hiring me <em>compounds</em> for your team.
+      Three reasons hiring me <em>compounds</em> for a strategy team.
     </h2>
     <p class="sub-headline reveal">
-      Most candidates pick one lane — quant or strategy. The interesting fintech bets demand both. Here's why my work is built to live at that intersection.
+      The interesting fintech bets sit where product judgement, market structure, and quantitative rigor meet. Here's why my work is built to live at that intersection.
     </p>
 
     <div class="exec-grid">
       <div class="exec-card reveal">
-        <div class="num">01 / Rigor</div>
-        <h3>Quantitative work that survives a backtest, not just a slide.</h3>
-        <p>Dollar-neutral equity strategy over 2,167 NSE stocks (Sharpe 1.33). XGBoost IV models at MSE 2&#8202;e&#8202;-4. AUC 0.84 churn classifier. The numbers are defensible because the methodology is.</p>
-      </div>
-      <div class="exec-card reveal">
-        <div class="num">02 / Strategy</div>
+        <div class="num">01 / Strategy</div>
         <h3>Product cases written like the CEO Office will actually read them.</h3>
-        <p>0-to-1 business cases with real user research (22 interviews, N=210 surveys). Market entry plans with TAM/SAM/SOM, GTM, and build-vs-partner sequencing. Symmetric competitive teardowns — not bullet-point summaries.</p>
+        <p>0-to-1 business cases backed by real user research (22 interviews, N=210 surveys). Market entry plans with TAM/SAM/SOM, GTM, and build-vs-partner sequencing. Symmetric competitive teardowns of incumbents — not bullet summaries.</p>
       </div>
       <div class="exec-card reveal">
-        <div class="num">03 / Range</div>
-        <h3>Comfortable from a parquet file to a board recommendation.</h3>
-        <p>Python, SQL, gradient-boosted models on one side. JTBD, unit economics, Where-to-Play / How-to-Win frameworks on the other. The same brain ships both — and translates between them when no one else in the room can.</p>
+        <div class="num">02 / Market sense</div>
+        <h3>An informed point of view on where the fintech market is heading.</h3>
+        <p>I follow the structural shifts that matter — B2B becoming the next valuation lever, embedded credit going mainstream, AI moving from add-on to core infrastructure. I write about them with a thesis, not a summary.</p>
+      </div>
+      <div class="exec-card reveal">
+        <div class="num">03 / Numbers</div>
+        <h3>A quantitative backbone — used to settle arguments, not show off.</h3>
+        <p>I default to evidence. RFM segmentation on real datasets, churn classifiers (AUC 0.84), backtested factor strategies. The point isn't the methodology — it's that recommendations are defensible when someone challenges them.</p>
       </div>
     </div>
   </section>
@@ -757,42 +840,137 @@
     </div>
 
     <h2 class="action-title reveal">
-      Eighteen months of work, <span class="underline">compressed into four numbers.</span>
+      Eighteen months of work, <span class="underline">in four numbers.</span>
     </h2>
 
     <div class="stats-grid">
       <div class="stat reveal">
-        <div class="value">8<sup>+</sup></div>
-        <div class="label">Projects shipped<br />Quant &amp; Strategy</div>
-      </div>
-      <div class="stat reveal">
-        <div class="value">15<sup>+</sup></div>
-        <div class="label">Years of alpha<br />backtested</div>
-      </div>
-      <div class="stat reveal">
         <div class="value">$42B<sup>+</sup></div>
-        <div class="label">TAM analyzed<br />across cases</div>
+        <div class="label">TAM analyzed<br />across market cases</div>
       </div>
       <div class="stat reveal">
-        <div class="value">0.84</div>
-        <div class="label">Churn model AUC<br />on 100K rows</div>
+        <div class="value">8</div>
+        <div class="label">Incumbent teardowns<br />on product &amp; unit econ</div>
+      </div>
+      <div class="stat reveal">
+        <div class="value">22</div>
+        <div class="label">User interviews<br />on a 0-1 product case</div>
+      </div>
+      <div class="stat reveal">
+        <div class="value">$180M</div>
+        <div class="label">Year-3 revenue<br />modeled for GTM plan</div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       IV — WORK
+       IV — FEATURED ANALYSIS (chart)
+  ============================================================ -->
+  <section id="analysis" class="container">
+    <div class="section-label">
+      <span class="num">04</span><span>Featured Analysis</span><span class="rule"></span>
+    </div>
+
+    <div class="featured reveal">
+      <div class="featured-header">
+        <span class="featured-tag">Sector deep-dive</span>
+      </div>
+      <h3>Where I'd play in <em>B2B fintech</em> — the mid-market treasury wedge.</h3>
+      <p class="featured-sub">
+        Mapping leading B2B players on product depth vs geographic reach surfaces a $12B underserved zone between SMB-focused neobanks and enterprise treasury giants. The wedge: globally available, mid-market grade, API-first treasury — exactly the gap most legacy banks treat as a side bet.
+      </p>
+
+      <!-- Inline SVG: 2x2 competitive matrix -->
+      <svg class="featured-chart" viewBox="0 0 880 480" xmlns="http://www.w3.org/2000/svg" aria-label="Competitive matrix: product depth vs geographic reach for B2B fintech players">
+        <!-- Axes -->
+        <defs>
+          <pattern id="grid" width="80" height="60" patternUnits="userSpaceOnUse">
+            <path d="M 80 0 L 0 0 0 60" fill="none" stroke="#E8DFD2" stroke-width="0.5"/>
+          </pattern>
+          <linearGradient id="whitespace" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFE4DC" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#FFE4DC" stop-opacity="0.35"/>
+          </linearGradient>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#FF4D2E"/>
+          </marker>
+        </defs>
+
+        <!-- Plot area background -->
+        <rect x="80" y="40" width="720" height="360" fill="url(#grid)" rx="4"/>
+
+        <!-- White space zone -->
+        <rect x="500" y="60" width="280" height="180" fill="url(#whitespace)" rx="6" stroke="#FF4D2E" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <text x="640" y="155" text-anchor="middle" font-family="Fraunces, serif" font-size="22" font-style="italic" fill="#FF4D2E" font-weight="500">White space</text>
+        <text x="640" y="180" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#E03515" letter-spacing="1.5">~$12B WEDGE</text>
+
+        <!-- Y axis -->
+        <line x1="80" y1="40" x2="80" y2="400" stroke="#0F0F0F" stroke-width="1.5"/>
+        <!-- X axis -->
+        <line x1="80" y1="400" x2="800" y2="400" stroke="#0F0F0F" stroke-width="1.5"/>
+
+        <!-- Y axis labels -->
+        <text x="65" y="50" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10" fill="#6B625A" letter-spacing="1">GLOBAL</text>
+        <text x="65" y="404" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10" fill="#6B625A" letter-spacing="1">REGIONAL</text>
+        <text x="30" y="220" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#0F0F0F" letter-spacing="2" transform="rotate(-90 30 220)">GEOGRAPHIC REACH →</text>
+
+        <!-- X axis labels -->
+        <text x="80" y="425" font-family="JetBrains Mono, monospace" font-size="10" fill="#6B625A" letter-spacing="1">SMB TOOLS</text>
+        <text x="800" y="425" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10" fill="#6B625A" letter-spacing="1">ENTERPRISE TREASURY</text>
+        <text x="440" y="455" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#0F0F0F" letter-spacing="2">PRODUCT DEPTH →</text>
+
+        <!-- Players (bubbles) -->
+        <!-- Tide: SMB tools, UK/EU regional -->
+        <circle cx="180" cy="310" r="32" fill="#2E4FFF" fill-opacity="0.18" stroke="#2E4FFF" stroke-width="1.5"/>
+        <text x="180" y="313" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#2E4FFF">Tide</text>
+
+        <!-- Qonto: SMB tools, EU only -->
+        <circle cx="240" cy="350" r="28" fill="#2E4FFF" fill-opacity="0.15" stroke="#2E4FFF" stroke-width="1.5"/>
+        <text x="240" y="354" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#2E4FFF">Qonto</text>
+
+        <!-- Mercury: SMB+ tools, US focus -->
+        <circle cx="340" cy="290" r="36" fill="#2E4FFF" fill-opacity="0.20" stroke="#2E4FFF" stroke-width="1.5"/>
+        <text x="340" y="294" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#2E4FFF">Mercury</text>
+
+        <!-- Brex: deeper product, US + some global -->
+        <circle cx="450" cy="250" r="40" fill="#2E4FFF" fill-opacity="0.22" stroke="#2E4FFF" stroke-width="1.5"/>
+        <text x="450" y="254" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#2E4FFF">Brex</text>
+
+        <!-- JPMorgan: deep product, global -->
+        <circle cx="720" cy="120" r="44" fill="#6B625A" fill-opacity="0.18" stroke="#6B625A" stroke-width="1.5"/>
+        <text x="720" y="124" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#2A2520">JPM/HSBC</text>
+
+        <!-- Arrow pointing to white space -->
+        <path d="M 460 250 Q 540 200 600 165" stroke="#FF4D2E" stroke-width="1.8" fill="none" marker-end="url(#arrow)" stroke-dasharray="0"/>
+
+        <!-- Annotation labels -->
+        <text x="495" y="225" font-family="Fraunces, serif" font-size="14" font-style="italic" fill="#FF4D2E">expand here</text>
+      </svg>
+
+      <div class="featured-footer">
+        <span>Source: synthesized from 2025 fintech earnings, public KPIs, expert interviews</span>
+        <div class="legend">
+          <span><span class="dot" style="background:#2E4FFF;"></span>B2B neobanks</span>
+          <span><span class="dot" style="background:#6B625A;"></span>Legacy banks</span>
+          <span><span class="dot" style="background:#FF4D2E;"></span>Opportunity zone</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       V — WORK
   ============================================================ -->
   <section id="work" class="container">
     <div class="section-label">
-      <span class="num">04</span><span>Selected Work</span><span class="rule"></span>
+      <span class="num">05</span><span>Selected Work</span><span class="rule"></span>
     </div>
 
     <h2 class="action-title reveal">
-      Two tracks. <em>One thesis:</em> the best product calls<br />are the ones backed by numbers.
+      Strategy first. <em>Numbers behind</em> every recommendation.
     </h2>
     <p class="sub-headline reveal">
-      Strategy work that quantifies opportunity. Quant work translated into product recommendations. Each project carries its own moneyshot — and a documented method behind it.
+      Four product-strategy cases on the structural shifts shaping fintech today. Three quantitative projects that demonstrate the analytical floor my strategy work is built on.
     </p>
 
     <!-- TRACK A — Product Strategy -->
@@ -806,7 +984,25 @@
         <article class="project reveal">
           <span class="project-tag">Market Entry · GTM</span>
           <h4 class="project-title">Sized a <em>$42B+ neobank opportunity</em> in an emerging market across 3 demand drivers.</h4>
-          <p class="project-desc">TAM/SAM/SOM model, competitive teardown of 8 incumbents, and a 3-year GTM with wedge product, pricing, and a build-vs-partner regulatory sequence projecting $180M Year-3 revenue.</p>
+          <p class="project-desc">TAM/SAM/SOM model, competitive teardown of 8 incumbents, and a 3-year GTM with wedge product, pricing, and build-vs-partner regulatory sequence projecting $180M Year-3 revenue.</p>
+
+          <div class="project-viz">
+            <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg" aria-label="Revenue growth projection">
+              <text x="0" y="14" font-family="JetBrains Mono, monospace" font-size="9" fill="#A39989" letter-spacing="1">3-YR REVENUE TRAJECTORY ($M)</text>
+              <line x1="0" y1="52" x2="400" y2="52" stroke="#E8DFD2" stroke-width="1"/>
+              <!-- Bars -->
+              <rect x="40"  y="46" width="32" height="6"  fill="#FF4D2E" rx="1"/>
+              <rect x="130" y="32" width="32" height="20" fill="#FF4D2E" rx="1"/>
+              <rect x="220" y="20" width="32" height="32" fill="#FF4D2E" rx="1"/>
+              <text x="56"  y="42" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#6B625A">$28M</text>
+              <text x="146" y="28" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#6B625A">$92M</text>
+              <text x="236" y="16" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#0F0F0F" font-weight="600">$180M</text>
+              <text x="56"  y="60" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#A39989">Y1</text>
+              <text x="146" y="60" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#A39989">Y2</text>
+              <text x="236" y="60" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#A39989">Y3</text>
+            </svg>
+          </div>
+
           <div class="project-metrics">
             <span class="metric-chip">$42B TAM</span>
             <span class="metric-chip">8 incumbents</span>
@@ -818,11 +1014,26 @@
         <article class="project reveal">
           <span class="project-tag">Vertical POV · B2B</span>
           <h4 class="project-title">Authored a <em>25-page POV</em> on global SMB banking and a $12B mid-market wedge.</h4>
-          <p class="project-desc">Deconstructed Brex, Mercury, Qonto, and Tide using a Where-to-Play / How-to-Win frame. Proposed 3 product bets (embedded credit, multi-currency treasury, payroll APIs) with 18-month sequencing.</p>
+          <p class="project-desc">Deconstructed Brex, Mercury, Qonto, and Tide on product depth, monetization, and unit economics. Proposed 3 product bets — embedded credit, multi-currency treasury, payroll APIs — with 18-month sequencing and KPIs.</p>
+
+          <div class="project-viz">
+            <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg" aria-label="Revenue mix breakdown">
+              <text x="0" y="14" font-family="JetBrains Mono, monospace" font-size="9" fill="#A39989" letter-spacing="1">PROPOSED REVENUE MIX · 18 MONTHS OUT</text>
+              <!-- Stacked bar -->
+              <rect x="0" y="30" width="160" height="14" fill="#FF4D2E" rx="2 0 0 2"/>
+              <rect x="160" y="30" width="120" height="14" fill="#2E4FFF"/>
+              <rect x="280" y="30" width="80" height="14" fill="#FFB627" rx="0 2 2 0"/>
+              <!-- Labels -->
+              <text x="80" y="40" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#fff" font-weight="600">CREDIT 44%</text>
+              <text x="220" y="40" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#fff" font-weight="600">TREASURY 33%</text>
+              <text x="320" y="40" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#fff" font-weight="600">PAYROLL 23%</text>
+            </svg>
+          </div>
+
           <div class="project-metrics">
             <span class="metric-chip">5 teardowns</span>
             <span class="metric-chip">$12B wedge</span>
-            <span class="metric-chip">3 bets</span>
+            <span class="metric-chip">3 product bets</span>
           </div>
           <div class="project-meta"><span>02 / Sector Deep-Dive</span><span>Feb – Mar '26</span></div>
         </article>
@@ -831,6 +1042,21 @@
           <span class="project-tag">0-to-1 · Business Case</span>
           <h4 class="project-title">Built the <em>0-1 case</em> for an embedded credit product inside a global payment app.</h4>
           <p class="project-desc">22 user interviews and an N=210 survey mapped JTBD with 64% intent-to-use. Unit economics projected $38 LTV and 18-month payback; build-vs-buy ran across 3 underwriting partners.</p>
+
+          <div class="project-viz">
+            <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg" aria-label="LTV vs CAC payback curve">
+              <text x="0" y="14" font-family="JetBrains Mono, monospace" font-size="9" fill="#A39989" letter-spacing="1">LTV ACCRUAL ($)  ·  PAYBACK AT MONTH 18</text>
+              <line x1="0" y1="52" x2="400" y2="52" stroke="#E8DFD2" stroke-width="1"/>
+              <!-- Curve -->
+              <path d="M 0 48 Q 80 44 140 36 T 280 22 T 400 18" stroke="#FF4D2E" stroke-width="2" fill="none"/>
+              <!-- Payback point -->
+              <line x1="230" y1="20" x2="230" y2="52" stroke="#0F0F0F" stroke-width="1" stroke-dasharray="3 3"/>
+              <circle cx="230" cy="28" r="4" fill="#FF4D2E"/>
+              <text x="236" y="24" font-family="JetBrains Mono, monospace" font-size="9" fill="#0F0F0F" font-weight="600">$38 LTV</text>
+              <text x="236" y="36" font-family="JetBrains Mono, monospace" font-size="8" fill="#6B625A">M18 payback</text>
+            </svg>
+          </div>
+
           <div class="project-metrics">
             <span class="metric-chip">22 interviews</span>
             <span class="metric-chip">N=210</span>
@@ -841,8 +1067,22 @@
 
         <article class="project reveal">
           <span class="project-tag">Analytics → Roadmap</span>
-          <h4 class="project-title">Turned a <em>churn model (AUC 0.84)</em> into a 3-feature roadmap projected to lift Premium conversion 18%.</h4>
+          <h4 class="project-title">Turned a <em>churn model</em> into a 3-feature roadmap projected to lift Premium conversion 18%.</h4>
           <p class="project-desc">RFM segmentation on a 100K-row neobank transaction dataset surfaced a high-LTV upsell cohort. A gradient-boosted churn classifier informed three product nudges, validated with a guardrail-aware A/B framework.</p>
+
+          <div class="project-viz">
+            <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg" aria-label="Premium conversion uplift">
+              <text x="0" y="14" font-family="JetBrains Mono, monospace" font-size="9" fill="#A39989" letter-spacing="1">PREMIUM CONVERSION · BASELINE VS PROJECTED</text>
+              <!-- Baseline -->
+              <rect x="20" y="34" width="160" height="14" fill="#D5C8B6" rx="2"/>
+              <text x="100" y="44" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#0F0F0F" font-weight="600">BASELINE 5.2%</text>
+              <!-- Projected -->
+              <rect x="20" y="14" width="189" height="14" fill="#FF4D2E" rx="2"/>
+              <text x="115" y="24" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#fff" font-weight="600">PROJECTED 6.1%</text>
+              <text x="220" y="24" font-family="JetBrains Mono, monospace" font-size="10" fill="#FF4D2E" font-weight="600">+18%</text>
+            </svg>
+          </div>
+
           <div class="project-metrics">
             <span class="metric-chip">AUC 0.84</span>
             <span class="metric-chip">100K rows</span>
@@ -853,30 +1093,30 @@
       </div>
     </div>
 
-    <!-- TRACK B — Quant & Finance -->
+    <!-- TRACK B — Applied Analytics & Markets -->
     <div class="track">
       <div class="track-header reveal">
-        <h3 class="track-name">Track B · Quant <em>&amp; Finance</em></h3>
-        <span class="track-meta">4 projects · 2025</span>
+        <h3 class="track-name">Track B · Applied <em>Analytics &amp; Markets</em></h3>
+        <span class="track-meta">3 projects · 2025</span>
       </div>
 
       <div class="project-grid">
-        <article class="project reveal">
+        <article class="project blue reveal">
           <span class="project-tag">QuantChallenge · Five Rings</span>
-          <h4 class="project-title">Real-time, event-driven trading algorithm quoting <em>statistical bid/ask</em> on live basketball markets.</h4>
-          <p class="project-desc">Engineered time-series features from anonymized market events; built ensemble forecasters and execution logic with liquidity constraints and dynamic position sizing to maximize risk-adjusted PnL.</p>
+          <h4 class="project-title">Real-time, event-driven trading algorithm with <em>statistical bid/ask</em> quoting.</h4>
+          <p class="project-desc">Engineered time-series features from anonymized market events, built ensemble forecasters, and designed execution logic with liquidity constraints and dynamic position sizing for risk-adjusted PnL.</p>
           <div class="project-metrics">
             <span class="metric-chip">Python</span>
             <span class="metric-chip">Ensembles</span>
-            <span class="metric-chip">Risk-adj PnL</span>
+            <span class="metric-chip">Live events</span>
           </div>
           <div class="project-meta"><span>05 / Five Rings Capital</span><span>Sept '25</span></div>
         </article>
 
-        <article class="project reveal">
+        <article class="project blue reveal">
           <span class="project-tag">ML · IV Forecasting</span>
-          <h4 class="project-title">Forecasted implied volatility at <em>MSE 2e-4</em> using XGBoost on 20+ engineered features.</h4>
-          <p class="project-desc">Built moneyness, expiry-decay, and IV-outlier features that lifted R² by 13.4%. Modeled volatility regimes via reshaped Parquet data, reducing MAE to 0.1051 and gaining 15.2% accuracy.</p>
+          <h4 class="project-title">Forecasted implied volatility at <em>MSE 2e-4</em> with XGBoost on 20+ engineered features.</h4>
+          <p class="project-desc">Built moneyness, expiry-decay, and IV-outlier features lifting R² by 13.4%. Modeled volatility regimes on reshaped Parquet data — MAE 0.1051, 15.2% accuracy gain.</p>
           <div class="project-metrics">
             <span class="metric-chip">MSE 2e-4</span>
             <span class="metric-chip">+13.4% R²</span>
@@ -885,81 +1125,81 @@
           <div class="project-meta"><span>06 / NK Securities</span><span>May – Jun '25</span></div>
         </article>
 
-        <article class="project reveal">
+        <article class="project blue reveal">
           <span class="project-tag">Quant Quest · Qube Research</span>
-          <h4 class="project-title">Dollar-neutral strategy on <em>2,167 NSE stocks</em> with a Sharpe of 1.33.</h4>
-          <p class="project-desc">Daily portfolio weights from trend, momentum, and volatility factors, backtested across 15+ years of bull, bear, and high-vol regimes. A volatility filter on noisy signals lifted Sharpe by 14.6%.</p>
+          <h4 class="project-title">Dollar-neutral strategy on <em>2,167 stocks</em> with a Sharpe of 1.33.</h4>
+          <p class="project-desc">Daily portfolio weights from trend, momentum, and volatility factors backtested across 15+ years of bull, bear, and high-vol regimes. A volatility filter lifted Sharpe by 14.6%.</p>
           <div class="project-metrics">
             <span class="metric-chip">Sharpe 1.33</span>
-            <span class="metric-chip">2,167 stocks</span>
+            <span class="metric-chip">15+ yrs</span>
             <span class="metric-chip">+14.6%</span>
           </div>
           <div class="project-meta"><span>07 / Qube Research Technologies</span><span>Mar – Apr '25</span></div>
         </article>
-
-        <article class="project reveal">
-          <span class="project-tag">Derivatives · Finance Club</span>
-          <h4 class="project-title">Compared <em>Binomial vs Black–Scholes</em> on pricing, Delta, and hedge performance.</h4>
-          <p class="project-desc">Implemented core option pricing models in Python; analyzed sensitivity and discrete-vs-continuous convergence. Built intuition for hedging accuracy under real-world Greeks.</p>
-          <div class="project-metrics">
-            <span class="metric-chip">Black-Scholes</span>
-            <span class="metric-chip">Binomial</span>
-            <span class="metric-chip">Delta hedge</span>
-          </div>
-          <div class="project-meta"><span>08 / Finance Club, IIT Bombay</span><span>Jun – Jul '25</span></div>
-        </article>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       V — CAPABILITIES
+       VI — CAPABILITIES
   ============================================================ -->
   <section id="capabilities" class="container">
     <div class="section-label">
-      <span class="num">05</span><span>Capabilities</span><span class="rule"></span>
+      <span class="num">06</span><span>Capabilities</span><span class="rule"></span>
     </div>
 
     <h2 class="action-title reveal">
-      Three muscles. <em>Used together,</em> not in isolation.
+      The toolkit, <em>in the order I reach for it.</em>
     </h2>
 
     <div class="cap-grid">
       <div class="cap reveal">
-        <h4><span class="ic">01</span>Quantitative</h4>
+        <span class="ic">PRIMARY</span>
+        <h4>Strategy &amp; Product</h4>
         <ul>
-          <li>Python</li><li>SQL</li><li>XGBoost</li><li>scikit-learn</li>
-          <li>Pandas</li><li>NumPy</li><li>Time-series</li><li>Backtesting</li>
-          <li>Parquet</li><li>A/B testing</li>
+          <li>TAM/SAM/SOM</li>
+          <li>Where-to-Play / How-to-Win</li>
+          <li>Competitive teardowns</li>
+          <li>JTBD</li>
+          <li>Unit economics</li>
+          <li>GTM</li>
+          <li>0-to-1 business cases</li>
+          <li>User research</li>
+          <li>Build / Buy / Partner</li>
+          <li>KPI trees</li>
+          <li>Roadmap sequencing</li>
         </ul>
       </div>
       <div class="cap reveal">
-        <h4><span class="ic">02</span>Strategy &amp; Product</h4>
+        <span class="ic">QUANT</span>
+        <h4>Data &amp; Analytics</h4>
         <ul>
-          <li>TAM/SAM/SOM</li><li>Where-to-Play / How-to-Win</li>
-          <li>JTBD</li><li>Unit economics</li><li>GTM</li>
-          <li>0-to-1 cases</li><li>User research</li>
-          <li>Build / Buy / Partner</li><li>KPI trees</li>
+          <li>Python</li><li>SQL</li>
+          <li>XGBoost</li><li>scikit-learn</li>
+          <li>Pandas</li>
+          <li>A/B testing</li><li>RFM</li>
         </ul>
       </div>
       <div class="cap reveal">
-        <h4><span class="ic">03</span>Finance &amp; Markets</h4>
+        <span class="ic">DOMAIN</span>
+        <h4>Finance &amp; Markets</h4>
         <ul>
-          <li>Options pricing</li><li>Greeks</li><li>Implied volatility</li>
-          <li>Factor models</li><li>Alpha research</li>
-          <li>Risk-adjusted PnL</li><li>Sharpe / drawdown</li>
-          <li>Market microstructure</li>
+          <li>Options &amp; Greeks</li>
+          <li>Implied vol</li>
+          <li>Factor models</li>
+          <li>Backtesting</li>
+          <li>Risk-adjusted PnL</li>
         </ul>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       VI — BACKGROUND
+       VII — BACKGROUND
   ============================================================ -->
   <section id="background" class="container">
     <div class="section-label">
-      <span class="num">06</span><span>Background</span><span class="rule"></span>
+      <span class="num">07</span><span>Background</span><span class="rule"></span>
     </div>
 
     <h2 class="action-title reveal">
@@ -969,12 +1209,12 @@
     <div class="bg-grid">
       <div class="edu-block reveal">
         <h3>Indian Institute of Technology, Bombay</h3>
-        <div class="institution">Undergraduate, Engineering · 2023 – Present</div>
+        <div class="institution">Undergraduate · Engineering · 2023 – Present</div>
         <ul class="detail-list">
-          <li>STEM grounding with quantitative coursework spanning probability, statistics, optimization, and numerical methods.</li>
-          <li>Active across IIT Bombay's Finance Club; involved in derivatives research and equity strategy workshops.</li>
-          <li>Selected for industry case competitions hosted by Five Rings Capital, NK Securities, and Qube Research Technologies.</li>
-          <li>Open to internship roles in fintech product strategy, quant research, and 0-to-1 product teams.</li>
+          <li>STEM grounding in probability, statistics, optimization, and numerical methods.</li>
+          <li>Active in IIT Bombay's Finance Club; involved in derivatives research and equity strategy work.</li>
+          <li>Selected for case challenges hosted by Five Rings Capital, NK Securities, and Qube Research Technologies.</li>
+          <li>Targeting summer / autumn internships in fintech product strategy and 0-to-1 product teams.</li>
         </ul>
       </div>
 
@@ -988,30 +1228,26 @@
           <div class="award-meta">Top performer · May 2025</div>
         </div>
         <div class="award">
-          <div class="award-title">Quant Quest, Qube Research Technologies</div>
+          <div class="award-title">Quant Quest, Qube Research</div>
           <div class="award-meta">Strategy submission · Mar 2025</div>
-        </div>
-        <div class="award">
-          <div class="award-title">Finsearch, Finance Club</div>
-          <div class="award-meta">Derivatives research · Jun 2025</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       VII — CONTACT (RECOMMENDED ACTION)
+       VIII — CONTACT
   ============================================================ -->
   <section id="contact" class="container contact">
     <div class="section-label">
-      <span class="num">07</span><span>Recommended Action</span><span class="rule"></span>
+      <span class="num">08</span><span>Recommended Action</span><span class="rule"></span>
     </div>
 
     <h2 class="contact-title reveal">
       Let's build <em>what's next.</em>
     </h2>
     <p class="contact-sub reveal">
-      Available for Summer / Autumn 2026 internships in product strategy, quant research, and 0&#8209;to&#8209;1 product teams. Reply to any channel below — I usually respond within a day.
+      Available for Summer / Autumn 2026 internships in product strategy and 0-to-1 product teams. Reply to either channel — I usually respond within a day.
     </p>
 
     <div class="contact-channels reveal">
@@ -1022,26 +1258,12 @@
         </div>
         <div class="channel-arrow">→</div>
       </a>
-      <a class="channel" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">
-        <div class="channel-info">
-          <div class="label">LinkedIn</div>
-          <div class="value">/in/darshan-sonawane</div>
-        </div>
-        <div class="channel-arrow">→</div>
-      </a>
       <a class="channel" href="https://github.com/sanjikun106" target="_blank" rel="noopener">
         <div class="channel-info">
           <div class="label">GitHub</div>
           <div class="value">@sanjikun106</div>
         </div>
         <div class="channel-arrow">→</div>
-      </a>
-      <a class="channel" href="resume.pdf" target="_blank" rel="noopener">
-        <div class="channel-info">
-          <div class="label">Resume</div>
-          <div class="value">Download PDF</div>
-        </div>
-        <div class="channel-arrow">↓</div>
       </a>
     </div>
   </section>
@@ -1058,7 +1280,6 @@
   </footer>
 
   <script>
-    // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
