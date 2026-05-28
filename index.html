@@ -518,133 +518,6 @@
       padding-top: 12px;
     }
 
-    /* ---------- Capabilities ---------- */
-    .cap-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
-      gap: 0;
-      margin-top: 56px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    @media (max-width: 880px) { .cap-grid { grid-template-columns: 1fr; } }
-    .cap {
-      padding: 36px 32px;
-      border-right: 1px solid var(--border);
-    }
-    .cap:last-child { border-right: none; }
-    @media (max-width: 880px) {
-      .cap { border-right: none; border-bottom: 1px solid var(--border); }
-      .cap:last-child { border-bottom: none; }
-    }
-    .cap .ic {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      margin-bottom: 12px;
-      display: block;
-    }
-    .cap:nth-child(2) .ic { color: var(--blue); }
-    .cap:nth-child(3) .ic { color: var(--amber); }
-    .cap h4 {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-variation-settings: 'opsz' 60;
-      font-size: 24px;
-      letter-spacing: -0.02em;
-      margin-bottom: 22px;
-      line-height: 1.2;
-    }
-    .cap ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .cap ul li {
-      font-family: var(--mono);
-      font-size: 12px;
-      padding: 6px 10px;
-      background: var(--bg);
-      border: 1px solid var(--border-strong);
-      border-radius: 3px;
-      color: var(--text-soft);
-      letter-spacing: 0.02em;
-    }
-
-    /* ---------- Background ---------- */
-    .bg-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 56px;
-      margin-top: 56px;
-      align-items: start;
-    }
-    @media (max-width: 880px) { .bg-grid { grid-template-columns: 1fr; gap: 48px; } }
-    .edu-block h3 {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-variation-settings: 'opsz' 60;
-      font-size: 30px;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin-bottom: 6px;
-    }
-    .edu-block .institution {
-      font-size: 14.5px;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-      font-family: var(--mono);
-      letter-spacing: 0.02em;
-    }
-    .edu-block .detail-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .edu-block .detail-list li {
-      font-size: 14.5px;
-      color: var(--text-soft);
-      padding-left: 22px;
-      position: relative;
-      line-height: 1.55;
-    }
-    .edu-block .detail-list li::before {
-      content: '';
-      position: absolute; left: 0; top: 9px;
-      width: 10px; height: 2px;
-      background: var(--accent);
-    }
-    .awards-block {
-      padding: 28px 28px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-    }
-    .awards-block .award {
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .awards-block .award:last-child { border-bottom: none; padding-bottom: 0; }
-    .awards-block .award:first-child { padding-top: 0; }
-    .awards-block .award-title {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-size: 18px;
-      letter-spacing: -0.01em;
-      margin-bottom: 2px;
-    }
-    .awards-block .award-meta {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--text-dim);
-      letter-spacing: 0.04em;
-    }
-
     /* ---------- Contact ---------- */
     .contact {
       text-align: left;
@@ -661,36 +534,19 @@
       pointer-events: none;
     }
     .contact > * { position: relative; }
-    .contact-title {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-variation-settings: 'opsz' 144, 'SOFT' 50;
-      font-size: clamp(48px, 8vw, 120px);
-      line-height: 0.96;
-      letter-spacing: -0.035em;
-      margin-bottom: 32px;
-      color: var(--text);
-    }
-    .contact-title em { font-style: italic; color: var(--accent); font-weight: 400; }
-    .contact-sub {
-      font-size: clamp(16px, 1.5vw, 20px);
-      color: var(--text-soft);
-      max-width: 680px;
-      line-height: 1.55;
-      margin-bottom: 56px;
-    }
 
     .contact-channels {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 0;
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 10px;
       overflow: hidden;
-      max-width: 760px;
+      max-width: 1080px;
+      margin-top: 8px;
     }
-    @media (max-width: 720px) { .contact-channels { grid-template-columns: 1fr; } }
+    @media (max-width: 880px) { .contact-channels { grid-template-columns: 1fr; } }
     .channel {
       padding: 28px 28px;
       border-right: 1px solid var(--border);
@@ -1141,114 +997,12 @@
   </section>
 
   <!-- ============================================================
-       VI — CAPABILITIES
-  ============================================================ -->
-  <section id="capabilities" class="container">
-    <div class="section-label">
-      <span class="num">06</span><span>Capabilities</span><span class="rule"></span>
-    </div>
-
-    <h2 class="action-title reveal">
-      The toolkit, <em>in the order I reach for it.</em>
-    </h2>
-
-    <div class="cap-grid">
-      <div class="cap reveal">
-        <span class="ic">PRIMARY</span>
-        <h4>Strategy &amp; Product</h4>
-        <ul>
-          <li>TAM/SAM/SOM</li>
-          <li>Where-to-Play / How-to-Win</li>
-          <li>Competitive teardowns</li>
-          <li>JTBD</li>
-          <li>Unit economics</li>
-          <li>GTM</li>
-          <li>0-to-1 business cases</li>
-          <li>User research</li>
-          <li>Build / Buy / Partner</li>
-          <li>KPI trees</li>
-          <li>Roadmap sequencing</li>
-        </ul>
-      </div>
-      <div class="cap reveal">
-        <span class="ic">QUANT</span>
-        <h4>Data &amp; Analytics</h4>
-        <ul>
-          <li>Python</li><li>SQL</li>
-          <li>XGBoost</li><li>scikit-learn</li>
-          <li>Pandas</li>
-          <li>A/B testing</li><li>RFM</li>
-        </ul>
-      </div>
-      <div class="cap reveal">
-        <span class="ic">DOMAIN</span>
-        <h4>Finance &amp; Markets</h4>
-        <ul>
-          <li>Options &amp; Greeks</li>
-          <li>Implied vol</li>
-          <li>Factor models</li>
-          <li>Backtesting</li>
-          <li>Risk-adjusted PnL</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       VII — BACKGROUND
-  ============================================================ -->
-  <section id="background" class="container">
-    <div class="section-label">
-      <span class="num">07</span><span>Background</span><span class="rule"></span>
-    </div>
-
-    <h2 class="action-title reveal">
-      The credentials behind the work.
-    </h2>
-
-    <div class="bg-grid">
-      <div class="edu-block reveal">
-        <h3>Indian Institute of Technology, Bombay</h3>
-        <div class="institution">Undergraduate · Engineering · 2023 – Present</div>
-        <ul class="detail-list">
-          <li>STEM grounding in probability, statistics, optimization, and numerical methods.</li>
-          <li>Active in IIT Bombay's Finance Club; involved in derivatives research and equity strategy work.</li>
-          <li>Selected for case challenges hosted by Five Rings Capital, NK Securities, and Qube Research Technologies.</li>
-          <li>Targeting summer / autumn internships in fintech product strategy and 0-to-1 product teams.</li>
-        </ul>
-      </div>
-
-      <div class="awards-block reveal">
-        <div class="award">
-          <div class="award-title">QuantChallenge 2025 Finalist</div>
-          <div class="award-meta">Five Rings Capital · Sept 2025</div>
-        </div>
-        <div class="award">
-          <div class="award-title">NK Securities IV Forecasting</div>
-          <div class="award-meta">Top performer · May 2025</div>
-        </div>
-        <div class="award">
-          <div class="award-title">Quant Quest, Qube Research</div>
-          <div class="award-meta">Strategy submission · Mar 2025</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       VIII — CONTACT
+       VI — CONTACT
   ============================================================ -->
   <section id="contact" class="container contact">
     <div class="section-label">
-      <span class="num">08</span><span>Recommended Action</span><span class="rule"></span>
+      <span class="num">06</span><span>Get in touch</span><span class="rule"></span>
     </div>
-
-    <h2 class="contact-title reveal">
-      Let's build <em>what's next.</em>
-    </h2>
-    <p class="contact-sub reveal">
-      Available for Summer / Autumn 2026 internships in product strategy and 0-to-1 product teams. Reply to either channel — I usually respond within a day.
-    </p>
 
     <div class="contact-channels reveal">
       <a class="channel" href="mailto:darshansonawane.1110@gmail.com">
@@ -1258,9 +1012,16 @@
         </div>
         <div class="channel-arrow">→</div>
       </a>
+      <a class="channel" href="https://github.com/luffy-taro-106?tab=repositories" target="_blank" rel="noopener">
+        <div class="channel-info">
+          <div class="label">GitHub · Primary</div>
+          <div class="value">@luffy-taro-106</div>
+        </div>
+        <div class="channel-arrow">→</div>
+      </a>
       <a class="channel" href="https://github.com/sanjikun106" target="_blank" rel="noopener">
         <div class="channel-info">
-          <div class="label">GitHub</div>
+          <div class="label">GitHub · Secondary</div>
           <div class="value">@sanjikun106</div>
         </div>
         <div class="channel-arrow">→</div>
