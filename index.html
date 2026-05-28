@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Darshan Sonawane — Product Strategy × Quantitative Finance</title>
+  <meta name="description" content="Portfolio of Darshan Sonawane: quantitative finance and product strategy work at the intersection of fintech, machine learning, and 0-to-1 product building." />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-elevated: #111111;
+      --border: #1d1d1d;
+      --border-strong: #2a2a2a;
+      --text: #f5f1ea;
+      --text-muted: #8a857d;
+      --text-dim: #5a564f;
+      --accent: #ff6b5b;
+      --accent-gold: #f5c26b;
+      --serif: 'Instrument Serif', Georgia, serif;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      --mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+      --max-width: 1240px;
+      --gutter: clamp(20px, 4vw, 56px);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ---------- Layout primitives ---------- */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+
+    section {
+      padding: clamp(80px, 12vw, 160px) 0;
+      border-top: 1px solid var(--border);
+      position: relative;
+    }
+    section:first-of-type { border-top: none; }
+
+    /* ---------- Top nav ---------- */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(10, 10, 10, 0.65);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 16px var(--gutter);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: var(--serif);
+      font-size: 22px;
+      letter-spacing: -0.01em;
+    }
+    .nav-brand .dot {
+      color: var(--accent);
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .nav-links a { transition: color 0.2s ease; }
+    .nav-links a:hover { color: var(--text); }
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+    }
+
+    /* ---------- Section labels (deck slide indicator) ---------- */
+    .section-label {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 32px;
+    }
+    .section-label .num {
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .section-label .rule {
+      flex: 1;
+      height: 1px;
+      background: var(--border-strong);
+    }
+
+    /* ---------- Display headlines (action titles) ---------- */
+    .action-title {
+      font-family: var(--serif);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      font-size: clamp(40px, 6.4vw, 88px);
+      margin-bottom: 24px;
+    }
+    .action-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .action-title .underline {
+      background: linear-gradient(transparent 60%, rgba(255, 107, 91, 0.25) 60%);
+      padding: 0 4px;
+    }
+    .sub-headline {
+      font-size: clamp(15px, 1.4vw, 18px);
+      color: var(--text-muted);
+      max-width: 720px;
+      line-height: 1.6;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      min-height: 100vh;
+      padding: 140px 0 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%; right: -10%;
+      width: 60vw; height: 60vw;
+      max-width: 800px; max-height: 800px;
+      background: radial-gradient(circle, rgba(255, 107, 91, 0.13) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero > * { position: relative; z-index: 1; }
+
+    .hero-meta {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 56px;
+    }
+    .hero-meta span::before {
+      content: '◆ ';
+      color: var(--accent);
+      margin-right: 6px;
+    }
+
+    .hero-headline {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(56px, 9vw, 132px);
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+      margin-bottom: 40px;
+      max-width: 1100px;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-tagline {
+      font-size: clamp(17px, 1.6vw, 22px);
+      color: var(--text-muted);
+      max-width: 640px;
+      line-height: 1.55;
+      margin-bottom: 56px;
+    }
+
+    .hero-footer {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .hero-footer .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border: 1px solid var(--text);
+      color: var(--text);
+      border-radius: 999px;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      transition: all 0.25s ease;
+    }
+    .hero-footer .cta:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
+    .hero-footer .cta .arrow {
+      transition: transform 0.25s ease;
+    }
+    .hero-footer .cta:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    /* ---------- Executive Summary ---------- */
+    .exec-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 56px;
+    }
+    @media (max-width: 880px) {
+      .exec-grid { grid-template-columns: 1fr; }
+    }
+    .exec-card {
+      padding: 36px 32px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+    .exec-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-4px);
+    }
+    .exec-card .num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+    .exec-card h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      margin-bottom: 14px;
+    }
+    .exec-card p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ---------- Moneyshot stats ---------- */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border-strong);
+      border-bottom: 1px solid var(--border-strong);
+      margin-top: 56px;
+    }
+    @media (max-width: 880px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .stat {
+      padding: 40px 28px;
+      border-right: 1px solid var(--border);
+      text-align: left;
+    }
+    .stat:last-child { border-right: none; }
+    @media (max-width: 880px) {
+      .stat:nth-child(2) { border-right: none; }
+      .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--border); }
+    }
+    .stat .value {
+      font-family: var(--serif);
+      font-size: clamp(48px, 5.5vw, 72px);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .stat .value sup {
+      font-size: 0.5em;
+      color: var(--accent);
+      vertical-align: super;
+      margin-left: 4px;
+    }
+    .stat .label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ---------- Project tracks ---------- */
+    .track {
+      margin-top: 80px;
+    }
+    .track-header {
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-strong);
+    }
+    .track-name {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3.6vw, 40px);
+      font-weight: 400;
+      letter-spacing: -0.015em;
+    }
+    .track-name em { color: var(--accent); font-style: italic; }
+    .track-meta {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-left: auto;
+    }
+    @media (max-width: 720px) {
+      .track-meta { display: none; }
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 880px) {
+      .project-grid { grid-template-columns: 1fr; }
+    }
+
+    .project {
+      padding: 36px 32px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .project::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      height: 2px;
+      width: 0;
+      background: var(--accent);
+      transition: width 0.4s ease;
+    }
+    .project:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-4px);
+    }
+    .project:hover::before { width: 100%; }
+
+    .project-tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .project-title {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.2vw, 28px);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+    }
+    .project-title em { color: var(--accent); font-style: italic; }
+    .project-desc {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .project-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+    .metric-chip {
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 6px 10px;
+      background: rgba(255, 107, 91, 0.08);
+      color: var(--accent);
+      border-radius: 3px;
+      letter-spacing: 0.04em;
+    }
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-top: auto;
+      padding-top: 14px;
+    }
+
+    /* ---------- Capabilities ---------- */
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 56px;
+      border-top: 1px solid var(--border-strong);
+      border-left: 1px solid var(--border-strong);
+    }
+    @media (max-width: 880px) {
+      .cap-grid { grid-template-columns: 1fr; }
+    }
+    .cap {
+      padding: 32px 28px;
+      border-right: 1px solid var(--border-strong);
+      border-bottom: 1px solid var(--border-strong);
+    }
+    .cap h4 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 22px;
+      letter-spacing: -0.015em;
+      margin-bottom: 18px;
+    }
+    .cap h4 .ic {
+      color: var(--accent);
+      margin-right: 8px;
+      font-family: var(--mono);
+      font-size: 13px;
+    }
+    .cap ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .cap ul li {
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 5px 10px;
+      background: transparent;
+      border: 1px solid var(--border-strong);
+      border-radius: 3px;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+    }
+
+    /* ---------- Background / Education ---------- */
+    .bg-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 64px;
+      margin-top: 56px;
+    }
+    @media (max-width: 880px) {
+      .bg-grid { grid-template-columns: 1fr; gap: 48px; }
+    }
+    .edu-block h3 {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 400;
+      letter-spacing: -0.015em;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .edu-block .institution {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .edu-block .detail-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .edu-block .detail-list li {
+      font-size: 14px;
+      color: var(--text-muted);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.55;
+    }
+    .edu-block .detail-list li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 8px;
+      top: 6px;
+    }
+
+    .awards-block .award {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .awards-block .award:last-child { border-bottom: none; }
+    .awards-block .award-title {
+      font-family: var(--serif);
+      font-size: 17px;
+      letter-spacing: -0.01em;
+      margin-bottom: 2px;
+    }
+    .awards-block .award-meta {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.04em;
+    }
+
+    /* ---------- Contact ---------- */
+    .contact {
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact::before {
+      content: '';
+      position: absolute;
+      bottom: -30%; left: -10%;
+      width: 50vw; height: 50vw;
+      max-width: 700px; max-height: 700px;
+      background: radial-gradient(circle, rgba(245, 194, 107, 0.10) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .contact > * { position: relative; }
+    .contact-title {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(48px, 7.5vw, 108px);
+      line-height: 1;
+      letter-spacing: -0.025em;
+      margin-bottom: 32px;
+    }
+    .contact-title em { font-style: italic; color: var(--accent); }
+    .contact-sub {
+      font-size: clamp(16px, 1.5vw, 19px);
+      color: var(--text-muted);
+      max-width: 640px;
+      line-height: 1.6;
+      margin-bottom: 56px;
+    }
+
+    .contact-channels {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--border-strong);
+      border-left: 1px solid var(--border-strong);
+    }
+    @media (max-width: 720px) {
+      .contact-channels { grid-template-columns: 1fr; }
+    }
+    .channel {
+      padding: 28px 28px;
+      border-right: 1px solid var(--border-strong);
+      border-bottom: 1px solid var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.25s ease;
+    }
+    .channel:hover { background: var(--bg-elevated); }
+    .channel-info .label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+    }
+    .channel-info .value {
+      font-family: var(--serif);
+      font-size: 20px;
+      letter-spacing: -0.01em;
+    }
+    .channel-arrow {
+      font-family: var(--mono);
+      color: var(--text-muted);
+      transition: transform 0.25s ease, color 0.25s ease;
+    }
+    .channel:hover .channel-arrow {
+      transform: translateX(6px);
+      color: var(--accent);
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      padding: 32px 0;
+      border-top: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ---------- Scroll reveal ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: var(--bg);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#cover" class="nav-brand">Darshan Sonawane<span class="dot">.</span></a>
+      <div class="nav-links">
+        <a href="#summary">Summary</a>
+        <a href="#metrics">Metrics</a>
+        <a href="#work">Work</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       I — COVER
+  ============================================================ -->
+  <header id="cover" class="hero container">
+    <div class="hero-meta">
+      <span>Portfolio / 2026</span>
+      <span>Product Strategy × Quantitative Finance</span>
+      <span>IIT Bombay</span>
+    </div>
+
+    <h1 class="hero-headline">
+      Quantitative <em>rigor</em><br />
+      meets product <em>strategy.</em>
+    </h1>
+
+    <p class="hero-tagline">
+      I build the kind of analysis decisions are actually made on — alpha models that ship, market-entry cases that survive scrutiny, and 0&#8209;to&#8209;1 product bets backed by user research and unit economics.
+    </p>
+
+    <div class="hero-footer">
+      <a href="#work" class="cta">
+        <span>See the work</span>
+        <span class="arrow">→</span>
+      </a>
+      <span>8 projects · 18 months · 1 thesis</span>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       II — EXECUTIVE SUMMARY
+  ============================================================ -->
+  <section id="summary" class="container">
+    <div class="section-label">
+      <span class="num">02</span><span>Executive Summary</span><span class="rule"></span>
+    </div>
+
+    <h2 class="action-title reveal">
+      Three reasons hiring me <em>compounds</em> for your team.
+    </h2>
+    <p class="sub-headline reveal">
+      Most candidates pick one lane — quant or strategy. The interesting fintech bets demand both. Here's why my work is built to live at that intersection.
+    </p>
+
+    <div class="exec-grid">
+      <div class="exec-card reveal">
+        <div class="num">01 / Rigor</div>
+        <h3>Quantitative work that survives a backtest, not just a slide.</h3>
+        <p>Dollar-neutral equity strategy over 2,167 NSE stocks (Sharpe 1.33). XGBoost IV models at MSE 2&#8202;e&#8202;-4. AUC 0.84 churn classifier. The numbers are defensible because the methodology is.</p>
+      </div>
+      <div class="exec-card reveal">
+        <div class="num">02 / Strategy</div>
+        <h3>Product cases written like the CEO Office will actually read them.</h3>
+        <p>0-to-1 business cases with real user research (22 interviews, N=210 surveys). Market entry plans with TAM/SAM/SOM, GTM, and build-vs-partner sequencing. Symmetric competitive teardowns — not bullet-point summaries.</p>
+      </div>
+      <div class="exec-card reveal">
+        <div class="num">03 / Range</div>
+        <h3>Comfortable from a parquet file to a board recommendation.</h3>
+        <p>Python, SQL, gradient-boosted models on one side. JTBD, unit economics, Where-to-Play / How-to-Win frameworks on the other. The same brain ships both — and translates between them when no one else in the room can.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       III — MONEYSHOT METRICS
+  ============================================================ -->
+  <section id="metrics" class="container">
+    <div class="section-label">
+      <span class="num">03</span><span>By the Numbers</span><span class="rule"></span>
+    </div>
+
+    <h2 class="action-title reveal">
+      Eighteen months of work, <span class="underline">compressed into four numbers.</span>
+    </h2>
+
+    <div class="stats-grid">
+      <div class="stat reveal">
+        <div class="value">8<sup>+</sup></div>
+        <div class="label">Projects shipped<br />Quant &amp; Strategy</div>
+      </div>
+      <div class="stat reveal">
+        <div class="value">15<sup>+</sup></div>
+        <div class="label">Years of alpha<br />backtested</div>
+      </div>
+      <div class="stat reveal">
+        <div class="value">$42B<sup>+</sup></div>
+        <div class="label">TAM analyzed<br />across cases</div>
+      </div>
+      <div class="stat reveal">
+        <div class="value">0.84</div>
+        <div class="label">Churn model AUC<br />on 100K rows</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       IV — WORK
+  ============================================================ -->
+  <section id="work" class="container">
+    <div class="section-label">
+      <span class="num">04</span><span>Selected Work</span><span class="rule"></span>
+    </div>
+
+    <h2 class="action-title reveal">
+      Two tracks. <em>One thesis:</em> the best product calls<br />are the ones backed by numbers.
+    </h2>
+    <p class="sub-headline reveal">
+      Strategy work that quantifies opportunity. Quant work translated into product recommendations. Each project carries its own moneyshot — and a documented method behind it.
+    </p>
+
+    <!-- TRACK A — Product Strategy -->
+    <div class="track">
+      <div class="track-header reveal">
+        <h3 class="track-name">Track A · Product <em>Strategy</em></h3>
+        <span class="track-meta">4 cases · 2025 – 2026</span>
+      </div>
+
+      <div class="project-grid">
+        <article class="project reveal">
+          <span class="project-tag">Market Entry · GTM</span>
+          <h4 class="project-title">Sized a <em>$42B+ neobank opportunity</em> in an emerging market across 3 demand drivers.</h4>
+          <p class="project-desc">TAM/SAM/SOM model, competitive teardown of 8 incumbents, and a 3-year GTM with wedge product, pricing, and a build-vs-partner regulatory sequence projecting $180M Year-3 revenue.</p>
+          <div class="project-metrics">
+            <span class="metric-chip">$42B TAM</span>
+            <span class="metric-chip">8 incumbents</span>
+            <span class="metric-chip">$180M Y3</span>
+          </div>
+          <div class="project-meta"><span>01 / Self-Initiated</span><span>Apr – May '26</span></div>
+        </article>
+
+        <article class="project reveal">
+          <span class="project-tag">Vertical POV · B2B</span>
+          <h4 class="project-title">Authored a <em>25-page POV</em> on global SMB banking and a $12B mid-market wedge.</h4>
+          <p class="project-desc">Deconstructed Brex, Mercury, Qonto, and Tide using a Where-to-Play / How-to-Win frame. Proposed 3 product bets (embedded credit, multi-currency treasury, payroll APIs) with 18-month sequencing.</p>
+          <div class="project-metrics">
+            <span class="metric-chip">5 teardowns</span>
+            <span class="metric-chip">$12B wedge</span>
+            <span class="metric-chip">3 bets</span>
+          </div>
+          <div class="project-meta"><span>02 / Sector Deep-Dive</span><span>Feb – Mar '26</span></div>
+        </article>
+
+        <article class="project reveal">
+          <span class="project-tag">0-to-1 · Business Case</span>
+          <h4 class="project-title">Built the <em>0-1 case</em> for an embedded credit product inside a global payment app.</h4>
+          <p class="project-desc">22 user interviews and an N=210 survey mapped JTBD with 64% intent-to-use. Unit economics projected $38 LTV and 18-month payback; build-vs-buy ran across 3 underwriting partners.</p>
+          <div class="project-metrics">
+            <span class="metric-chip">22 interviews</span>
+            <span class="metric-chip">N=210</span>
+            <span class="metric-chip">$38 LTV</span>
+          </div>
+          <div class="project-meta"><span>03 / 0-1 Product</span><span>Dec '25 – Jan '26</span></div>
+        </article>
+
+        <article class="project reveal">
+          <span class="project-tag">Analytics → Roadmap</span>
+          <h4 class="project-title">Turned a <em>churn model (AUC 0.84)</em> into a 3-feature roadmap projected to lift Premium conversion 18%.</h4>
+          <p class="project-desc">RFM segmentation on a 100K-row neobank transaction dataset surfaced a high-LTV upsell cohort. A gradient-boosted churn classifier informed three product nudges, validated with a guardrail-aware A/B framework.</p>
+          <div class="project-metrics">
+            <span class="metric-chip">AUC 0.84</span>
+            <span class="metric-chip">100K rows</span>
+            <span class="metric-chip">+18% lift</span>
+          </div>
+          <div class="project-meta"><span>04 / Data Science</span><span>Oct – Nov '25</span></div>
+        </article>
+      </div>
+    </div>
+
+    <!-- TRACK B — Quant & Finance -->
+    <div class="track">
+      <div class="track-header reveal">
+        <h3 class="track-name">Track B · Quant <em>&amp; Finance</em></h3>
+        <span class="track-meta">4 projects · 2025</span>
+      </div>
+
+      <div class="project-grid">
+        <article class="project reveal">
+          <span class="project-tag">QuantChallenge · Five Rings</span>
+          <h4 class="project-title">Real-time, event-driven trading algorithm quoting <em>statistical bid/ask</em> on live basketball markets.</h4>
+          <p class="project-desc">Engineered time-series features from anonymized market events; built ensemble forecasters and execution logic with liquidity constraints and dynamic position sizing to maximize risk-adjusted PnL.</p>
+          <div class="project-metrics">
+            <span class="metric-chip">Python</span>
+            <span class="metric-chip">Ensembles</span>
+            <span class="metric-chip">Risk-adj PnL</span>
+          </div>
+          <div class="project-meta"><span>05 / Five Rings Capital</span><span>Sept '25</span></div>
+        </article>
+
+        <article class="project reveal">
+          <span class="project-tag">ML · IV Forecasting</span>
+          <h4 class="project-title">Forecasted implied volatility at <em>MSE 2e-4</em> using XGBoost on 20+ engineered features.</h4>
+          <p class="project-desc">Built moneyness, expiry-decay, and IV-outlier features that lifted R² by 13.4%. Modeled volatility regimes via reshaped Parquet data, reducing MAE to 0.1051 and gaining 15.2% accuracy.</p>
+          <div class="project-metrics">
+            <span class="metric-chip">MSE 2e-4</span>
+            <span class="metric-chip">+13.4% R²</span>
+            <span class="metric-chip">XGBoost</span>
+          </div>
+          <div class="project-meta"><span>06 / NK Securities</span><span>May – Jun '25</span></div>
+        </article>
+
+        <article class="project reveal">
+          <span class="project-tag">Quant Quest · Qube Research</span>
+          <h4 class="project-title">Dollar-neutral strategy on <em>2,167 NSE stocks</em> with a Sharpe of 1.33.</h4>
+          <p class="project-desc">Daily portfolio weights from trend, momentum, and volatility factors, backtested across 15+ years of bull, bear, and high-vol regimes. A volatility filter on noisy signals lifted Sharpe by 14.6%.</p>
+          <div class="project-metrics">
+            <span class="metric-chip">Sharpe 1.33</span>
+            <span class="metric-chip">2,167 stocks</span>
+            <span class="metric-chip">+14.6%</span>
+          </div>
+          <div class="project-meta"><span>07 / Qube Research Technologies</span><span>Mar – Apr '25</span></div>
+        </article>
+
+        <article class="project reveal">
+          <span class="project-tag">Derivatives · Finance Club</span>
+          <h4 class="project-title">Compared <em>Binomial vs Black–Scholes</em> on pricing, Delta, and hedge performance.</h4>
+          <p class="project-desc">Implemented core option pricing models in Python; analyzed sensitivity and discrete-vs-continuous convergence. Built intuition for hedging accuracy under real-world Greeks.</p>
+          <div class="project-metrics">
+            <span class="metric-chip">Black-Scholes</span>
+            <span class="metric-chip">Binomial</span>
+            <span class="metric-chip">Delta hedge</span>
+          </div>
+          <div class="project-meta"><span>08 / Finance Club, IIT Bombay</span><span>Jun – Jul '25</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       V — CAPABILITIES
+  ============================================================ -->
+  <section id="capabilities" class="container">
+    <div class="section-label">
+      <span class="num">05</span><span>Capabilities</span><span class="rule"></span>
+    </div>
+
+    <h2 class="action-title reveal">
+      Three muscles. <em>Used together,</em> not in isolation.
+    </h2>
+
+    <div class="cap-grid">
+      <div class="cap reveal">
+        <h4><span class="ic">01</span>Quantitative</h4>
+        <ul>
+          <li>Python</li><li>SQL</li><li>XGBoost</li><li>scikit-learn</li>
+          <li>Pandas</li><li>NumPy</li><li>Time-series</li><li>Backtesting</li>
+          <li>Parquet</li><li>A/B testing</li>
+        </ul>
+      </div>
+      <div class="cap reveal">
+        <h4><span class="ic">02</span>Strategy &amp; Product</h4>
+        <ul>
+          <li>TAM/SAM/SOM</li><li>Where-to-Play / How-to-Win</li>
+          <li>JTBD</li><li>Unit economics</li><li>GTM</li>
+          <li>0-to-1 cases</li><li>User research</li>
+          <li>Build / Buy / Partner</li><li>KPI trees</li>
+        </ul>
+      </div>
+      <div class="cap reveal">
+        <h4><span class="ic">03</span>Finance &amp; Markets</h4>
+        <ul>
+          <li>Options pricing</li><li>Greeks</li><li>Implied volatility</li>
+          <li>Factor models</li><li>Alpha research</li>
+          <li>Risk-adjusted PnL</li><li>Sharpe / drawdown</li>
+          <li>Market microstructure</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       VI — BACKGROUND
+  ============================================================ -->
+  <section id="background" class="container">
+    <div class="section-label">
+      <span class="num">06</span><span>Background</span><span class="rule"></span>
+    </div>
+
+    <h2 class="action-title reveal">
+      The credentials behind the work.
+    </h2>
+
+    <div class="bg-grid">
+      <div class="edu-block reveal">
+        <h3>Indian Institute of Technology, Bombay</h3>
+        <div class="institution">Undergraduate, Engineering · 2023 – Present</div>
+        <ul class="detail-list">
+          <li>STEM grounding with quantitative coursework spanning probability, statistics, optimization, and numerical methods.</li>
+          <li>Active across IIT Bombay's Finance Club; involved in derivatives research and equity strategy workshops.</li>
+          <li>Selected for industry case competitions hosted by Five Rings Capital, NK Securities, and Qube Research Technologies.</li>
+          <li>Open to internship roles in fintech product strategy, quant research, and 0-to-1 product teams.</li>
+        </ul>
+      </div>
+
+      <div class="awards-block reveal">
+        <div class="award">
+          <div class="award-title">QuantChallenge 2025 Finalist</div>
+          <div class="award-meta">Five Rings Capital · Sept 2025</div>
+        </div>
+        <div class="award">
+          <div class="award-title">NK Securities IV Forecasting</div>
+          <div class="award-meta">Top performer · May 2025</div>
+        </div>
+        <div class="award">
+          <div class="award-title">Quant Quest, Qube Research Technologies</div>
+          <div class="award-meta">Strategy submission · Mar 2025</div>
+        </div>
+        <div class="award">
+          <div class="award-title">Finsearch, Finance Club</div>
+          <div class="award-meta">Derivatives research · Jun 2025</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       VII — CONTACT (RECOMMENDED ACTION)
+  ============================================================ -->
+  <section id="contact" class="container contact">
+    <div class="section-label">
+      <span class="num">07</span><span>Recommended Action</span><span class="rule"></span>
+    </div>
+
+    <h2 class="contact-title reveal">
+      Let's build <em>what's next.</em>
+    </h2>
+    <p class="contact-sub reveal">
+      Available for Summer / Autumn 2026 internships in product strategy, quant research, and 0&#8209;to&#8209;1 product teams. Reply to any channel below — I usually respond within a day.
+    </p>
+
+    <div class="contact-channels reveal">
+      <a class="channel" href="mailto:darshansonawane.1110@gmail.com">
+        <div class="channel-info">
+          <div class="label">Email</div>
+          <div class="value">darshansonawane.1110@gmail.com</div>
+        </div>
+        <div class="channel-arrow">→</div>
+      </a>
+      <a class="channel" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">
+        <div class="channel-info">
+          <div class="label">LinkedIn</div>
+          <div class="value">/in/darshan-sonawane</div>
+        </div>
+        <div class="channel-arrow">→</div>
+      </a>
+      <a class="channel" href="https://github.com/sanjikun106" target="_blank" rel="noopener">
+        <div class="channel-info">
+          <div class="label">GitHub</div>
+          <div class="value">@sanjikun106</div>
+        </div>
+        <div class="channel-arrow">→</div>
+      </a>
+      <a class="channel" href="resume.pdf" target="_blank" rel="noopener">
+        <div class="channel-info">
+          <div class="label">Resume</div>
+          <div class="value">Download PDF</div>
+        </div>
+        <div class="channel-arrow">↓</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Darshan Sonawane</span>
+      <span>Designed &amp; built solo · No template, no AI veneer</span>
+      <span><a href="#cover">Back to top ↑</a></span>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach((el) => io.observe(el));
+  </script>
+
+</body>
+</html>
