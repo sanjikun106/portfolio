@@ -276,53 +276,6 @@
       line-height: 1.6;
     }
 
-    /* ---------- Moneyshot stats ---------- */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid var(--border-strong);
-      border-bottom: 1px solid var(--border-strong);
-      margin-top: 56px;
-      background: var(--bg-card);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 0 var(--border);
-    }
-    @media (max-width: 880px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
-    .stat {
-      padding: 40px 28px;
-      border-right: 1px solid var(--border);
-      position: relative;
-    }
-    .stat:last-child { border-right: none; }
-    @media (max-width: 880px) {
-      .stat:nth-child(2) { border-right: none; }
-      .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--border); }
-    }
-    .stat .value {
-      font-family: var(--serif);
-      font-size: clamp(48px, 5.5vw, 72px);
-      font-weight: 500;
-      font-variation-settings: 'opsz' 96;
-      letter-spacing: -0.035em;
-      line-height: 1;
-      color: var(--text);
-      margin-bottom: 12px;
-    }
-    .stat .value sup {
-      font-size: 0.45em;
-      color: var(--accent);
-      vertical-align: super;
-      margin-left: 4px;
-    }
-    .stat .label {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
     /* ---------- Featured chart ---------- */
     .featured {
       margin-top: 80px;
@@ -483,31 +436,6 @@
       line-height: 1.6;
     }
 
-    .project-viz {
-      margin-top: 4px;
-      padding: 14px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .project-viz svg { display: block; width: 100%; height: auto; }
-
-    .project-metrics {
-      display: flex; flex-wrap: wrap; gap: 6px;
-      margin-top: 4px;
-    }
-    .metric-chip {
-      font-family: var(--mono);
-      font-size: 11px;
-      padding: 5px 9px;
-      background: var(--accent-soft);
-      color: var(--accent-deep);
-      border-radius: 3px;
-      letter-spacing: 0.03em;
-      font-weight: 500;
-    }
-    .project.blue .metric-chip { background: var(--blue-soft); color: var(--blue); }
-    .project.amber .metric-chip { background: var(--amber-soft); color: #B8740B; }
-
     .project-meta {
       display: flex; justify-content: space-between;
       font-family: var(--mono);
@@ -617,7 +545,6 @@
       <a href="#cover" class="nav-brand">Darshan Sonawane<span class="dot">.</span></a>
       <div class="nav-links">
         <a href="#summary">Summary</a>
-        <a href="#metrics">Metrics</a>
         <a href="#analysis">Analysis</a>
         <a href="#work">Work</a>
         <a href="#contact">Contact</a>
@@ -649,7 +576,7 @@
         <span>See the work</span>
         <span class="arrow">→</span>
       </a>
-      <span>8 projects · 18 months · 1 thesis</span>
+      <span>Selected case work · 2025 – 2026</span>
     </div>
   </header>
 
@@ -672,7 +599,7 @@
       <div class="exec-card reveal">
         <div class="num">01 / Strategy</div>
         <h3>Product cases written like the CEO Office will actually read them.</h3>
-        <p>0-to-1 business cases backed by real user research (22 interviews, N=210 surveys). Market entry plans with TAM/SAM/SOM, GTM, and build-vs-partner sequencing. Symmetric competitive teardowns of incumbents — not bullet summaries.</p>
+        <p>0-to-1 business cases backed by real user research, market sizing, and unit economics. Competitive teardowns, GTM plans, and build-vs-partner analyses — written like a recommendation, not a summary.</p>
       </div>
       <div class="exec-card reveal">
         <div class="num">02 / Market sense</div>
@@ -680,51 +607,19 @@
         <p>I follow the structural shifts that matter — B2B becoming the next valuation lever, embedded credit going mainstream, AI moving from add-on to core infrastructure. I write about them with a thesis, not a summary.</p>
       </div>
       <div class="exec-card reveal">
-        <div class="num">03 / Numbers</div>
-        <h3>A quantitative backbone — used to settle arguments, not show off.</h3>
-        <p>I default to evidence. RFM segmentation on real datasets, churn classifiers (AUC 0.84), backtested factor strategies. The point isn't the methodology — it's that recommendations are defensible when someone challenges them.</p>
+        <div class="num">03 / Evidence</div>
+        <h3>A quantitative backbone — used to settle arguments, not to show off.</h3>
+        <p>I default to evidence. Customer segmentation on real datasets, churn classifiers, backtested factor strategies. The point isn't the methodology — it's that the recommendations stay defensible when someone challenges them.</p>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       III — MONEYSHOT METRICS
-  ============================================================ -->
-  <section id="metrics" class="container">
-    <div class="section-label">
-      <span class="num">03</span><span>By the Numbers</span><span class="rule"></span>
-    </div>
-
-    <h2 class="action-title reveal">
-      Eighteen months of work, <span class="underline">in four numbers.</span>
-    </h2>
-
-    <div class="stats-grid">
-      <div class="stat reveal">
-        <div class="value">$42B<sup>+</sup></div>
-        <div class="label">TAM analyzed<br />across market cases</div>
-      </div>
-      <div class="stat reveal">
-        <div class="value">8</div>
-        <div class="label">Incumbent teardowns<br />on product &amp; unit econ</div>
-      </div>
-      <div class="stat reveal">
-        <div class="value">22</div>
-        <div class="label">User interviews<br />on a 0-1 product case</div>
-      </div>
-      <div class="stat reveal">
-        <div class="value">$180M</div>
-        <div class="label">Year-3 revenue<br />modeled for GTM plan</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       IV — FEATURED ANALYSIS (chart)
+       III — FEATURED ANALYSIS (chart)
   ============================================================ -->
   <section id="analysis" class="container">
     <div class="section-label">
-      <span class="num">04</span><span>Featured Analysis</span><span class="rule"></span>
+      <span class="num">03</span><span>Featured Analysis</span><span class="rule"></span>
     </div>
 
     <div class="featured reveal">
@@ -815,18 +710,18 @@
   </section>
 
   <!-- ============================================================
-       V — WORK
+       IV — WORK
   ============================================================ -->
   <section id="work" class="container">
     <div class="section-label">
-      <span class="num">05</span><span>Selected Work</span><span class="rule"></span>
+      <span class="num">04</span><span>Selected Work</span><span class="rule"></span>
     </div>
 
     <h2 class="action-title reveal">
-      Strategy first. <em>Numbers behind</em> every recommendation.
+      The work, <em>in two tracks.</em>
     </h2>
     <p class="sub-headline reveal">
-      Four product-strategy cases on the structural shifts shaping fintech today. Three quantitative projects that demonstrate the analytical floor my strategy work is built on.
+      Strategy and product cases on the structural shifts shaping fintech today, alongside the quantitative work that taught me how to defend a recommendation.
     </p>
 
     <!-- TRACK A — Product Strategy -->
@@ -839,111 +734,29 @@
       <div class="project-grid">
         <article class="project reveal">
           <span class="project-tag">Market Entry · GTM</span>
-          <h4 class="project-title">Sized a <em>$42B+ neobank opportunity</em> in an emerging market across 3 demand drivers.</h4>
-          <p class="project-desc">TAM/SAM/SOM model, competitive teardown of 8 incumbents, and a 3-year GTM with wedge product, pricing, and build-vs-partner regulatory sequence projecting $180M Year-3 revenue.</p>
-
-          <div class="project-viz">
-            <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg" aria-label="Revenue growth projection">
-              <text x="0" y="14" font-family="JetBrains Mono, monospace" font-size="9" fill="#A39989" letter-spacing="1">3-YR REVENUE TRAJECTORY ($M)</text>
-              <line x1="0" y1="52" x2="400" y2="52" stroke="#E8DFD2" stroke-width="1"/>
-              <!-- Bars -->
-              <rect x="40"  y="46" width="32" height="6"  fill="#FF4D2E" rx="1"/>
-              <rect x="130" y="32" width="32" height="20" fill="#FF4D2E" rx="1"/>
-              <rect x="220" y="20" width="32" height="32" fill="#FF4D2E" rx="1"/>
-              <text x="56"  y="42" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#6B625A">$28M</text>
-              <text x="146" y="28" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#6B625A">$92M</text>
-              <text x="236" y="16" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#0F0F0F" font-weight="600">$180M</text>
-              <text x="56"  y="60" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#A39989">Y1</text>
-              <text x="146" y="60" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#A39989">Y2</text>
-              <text x="236" y="60" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#A39989">Y3</text>
-            </svg>
-          </div>
-
-          <div class="project-metrics">
-            <span class="metric-chip">$42B TAM</span>
-            <span class="metric-chip">8 incumbents</span>
-            <span class="metric-chip">$180M Y3</span>
-          </div>
+          <h4 class="project-title">Built a <em>market entry &amp; GTM strategy</em> for a neobank in an emerging fintech market.</h4>
+          <p class="project-desc">Sized the opportunity with a TAM/SAM/SOM model, ran a competitive teardown of eight local incumbents on product depth and unit economics, and designed a three-year GTM with a wedge product, pricing, and a build-vs-partner regulatory sequence.</p>
           <div class="project-meta"><span>01 / Self-Initiated</span><span>Apr – May '26</span></div>
         </article>
 
         <article class="project reveal">
           <span class="project-tag">Vertical POV · B2B</span>
-          <h4 class="project-title">Authored a <em>25-page POV</em> on global SMB banking and a $12B mid-market wedge.</h4>
-          <p class="project-desc">Deconstructed Brex, Mercury, Qonto, and Tide on product depth, monetization, and unit economics. Proposed 3 product bets — embedded credit, multi-currency treasury, payroll APIs — with 18-month sequencing and KPIs.</p>
-
-          <div class="project-viz">
-            <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg" aria-label="Revenue mix breakdown">
-              <text x="0" y="14" font-family="JetBrains Mono, monospace" font-size="9" fill="#A39989" letter-spacing="1">PROPOSED REVENUE MIX · 18 MONTHS OUT</text>
-              <!-- Stacked bar -->
-              <rect x="0" y="30" width="160" height="14" fill="#FF4D2E" rx="2 0 0 2"/>
-              <rect x="160" y="30" width="120" height="14" fill="#2E4FFF"/>
-              <rect x="280" y="30" width="80" height="14" fill="#FFB627" rx="0 2 2 0"/>
-              <!-- Labels -->
-              <text x="80" y="40" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#fff" font-weight="600">CREDIT 44%</text>
-              <text x="220" y="40" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#fff" font-weight="600">TREASURY 33%</text>
-              <text x="320" y="40" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#fff" font-weight="600">PAYROLL 23%</text>
-            </svg>
-          </div>
-
-          <div class="project-metrics">
-            <span class="metric-chip">5 teardowns</span>
-            <span class="metric-chip">$12B wedge</span>
-            <span class="metric-chip">3 product bets</span>
-          </div>
+          <h4 class="project-title">Authored a <em>strategic POV</em> on the global SMB banking opportunity.</h4>
+          <p class="project-desc">Deconstructed Brex, Mercury, Qonto, and Tide on product depth, monetization, and unit economics. Proposed three product bets — embedded credit, multi-currency treasury, and payroll APIs — sequenced into an 18-month roadmap with KPIs.</p>
           <div class="project-meta"><span>02 / Sector Deep-Dive</span><span>Feb – Mar '26</span></div>
         </article>
 
         <article class="project reveal">
           <span class="project-tag">0-to-1 · Business Case</span>
-          <h4 class="project-title">Built the <em>0-1 case</em> for an embedded credit product inside a global payment app.</h4>
-          <p class="project-desc">22 user interviews and an N=210 survey mapped JTBD with 64% intent-to-use. Unit economics projected $38 LTV and 18-month payback; build-vs-buy ran across 3 underwriting partners.</p>
-
-          <div class="project-viz">
-            <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg" aria-label="LTV vs CAC payback curve">
-              <text x="0" y="14" font-family="JetBrains Mono, monospace" font-size="9" fill="#A39989" letter-spacing="1">LTV ACCRUAL ($)  ·  PAYBACK AT MONTH 18</text>
-              <line x1="0" y1="52" x2="400" y2="52" stroke="#E8DFD2" stroke-width="1"/>
-              <!-- Curve -->
-              <path d="M 0 48 Q 80 44 140 36 T 280 22 T 400 18" stroke="#FF4D2E" stroke-width="2" fill="none"/>
-              <!-- Payback point -->
-              <line x1="230" y1="20" x2="230" y2="52" stroke="#0F0F0F" stroke-width="1" stroke-dasharray="3 3"/>
-              <circle cx="230" cy="28" r="4" fill="#FF4D2E"/>
-              <text x="236" y="24" font-family="JetBrains Mono, monospace" font-size="9" fill="#0F0F0F" font-weight="600">$38 LTV</text>
-              <text x="236" y="36" font-family="JetBrains Mono, monospace" font-size="8" fill="#6B625A">M18 payback</text>
-            </svg>
-          </div>
-
-          <div class="project-metrics">
-            <span class="metric-chip">22 interviews</span>
-            <span class="metric-chip">N=210</span>
-            <span class="metric-chip">$38 LTV</span>
-          </div>
+          <h4 class="project-title">Wrote a <em>0-to-1 product business case</em> for embedded credit inside a global payment app.</h4>
+          <p class="project-desc">Ran user interviews and a survey to map JTBD and intent-to-use. Modelled unit economics for LTV and payback, and pressure-tested a build-vs-buy decision across underwriting partners before locking the MVP scope and KPI tree.</p>
           <div class="project-meta"><span>03 / 0-1 Product</span><span>Dec '25 – Jan '26</span></div>
         </article>
 
         <article class="project reveal">
           <span class="project-tag">Analytics → Roadmap</span>
-          <h4 class="project-title">Turned a <em>churn model</em> into a 3-feature roadmap projected to lift Premium conversion 18%.</h4>
-          <p class="project-desc">RFM segmentation on a 100K-row neobank transaction dataset surfaced a high-LTV upsell cohort. A gradient-boosted churn classifier informed three product nudges, validated with a guardrail-aware A/B framework.</p>
-
-          <div class="project-viz">
-            <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg" aria-label="Premium conversion uplift">
-              <text x="0" y="14" font-family="JetBrains Mono, monospace" font-size="9" fill="#A39989" letter-spacing="1">PREMIUM CONVERSION · BASELINE VS PROJECTED</text>
-              <!-- Baseline -->
-              <rect x="20" y="34" width="160" height="14" fill="#D5C8B6" rx="2"/>
-              <text x="100" y="44" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#0F0F0F" font-weight="600">BASELINE 5.2%</text>
-              <!-- Projected -->
-              <rect x="20" y="14" width="189" height="14" fill="#FF4D2E" rx="2"/>
-              <text x="115" y="24" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#fff" font-weight="600">PROJECTED 6.1%</text>
-              <text x="220" y="24" font-family="JetBrains Mono, monospace" font-size="10" fill="#FF4D2E" font-weight="600">+18%</text>
-            </svg>
-          </div>
-
-          <div class="project-metrics">
-            <span class="metric-chip">AUC 0.84</span>
-            <span class="metric-chip">100K rows</span>
-            <span class="metric-chip">+18% lift</span>
-          </div>
+          <h4 class="project-title">Translated <em>customer analytics</em> into a Premium-conversion product roadmap.</h4>
+          <p class="project-desc">Segmented a neobank transaction dataset with RFM analysis to surface a high-LTV upsell cohort, then built a gradient-boosted churn classifier whose features informed three product nudges, validated through a guardrail-aware A/B test framework.</p>
           <div class="project-meta"><span>04 / Data Science</span><span>Oct – Nov '25</span></div>
         </article>
       </div>
@@ -959,37 +772,22 @@
       <div class="project-grid">
         <article class="project blue reveal">
           <span class="project-tag">QuantChallenge · Five Rings</span>
-          <h4 class="project-title">Real-time, event-driven trading algorithm with <em>statistical bid/ask</em> quoting.</h4>
-          <p class="project-desc">Engineered time-series features from anonymized market events, built ensemble forecasters, and designed execution logic with liquidity constraints and dynamic position sizing for risk-adjusted PnL.</p>
-          <div class="project-metrics">
-            <span class="metric-chip">Python</span>
-            <span class="metric-chip">Ensembles</span>
-            <span class="metric-chip">Live events</span>
-          </div>
+          <h4 class="project-title">Built a <em>real-time, event-driven trading algorithm</em> on live basketball markets.</h4>
+          <p class="project-desc">Engineered time-series features from anonymised market events, built ensemble forecasters, and designed execution logic with liquidity constraints and dynamic position sizing to maximise risk-adjusted PnL.</p>
           <div class="project-meta"><span>05 / Five Rings Capital</span><span>Sept '25</span></div>
         </article>
 
         <article class="project blue reveal">
           <span class="project-tag">ML · IV Forecasting</span>
-          <h4 class="project-title">Forecasted implied volatility at <em>MSE 2e-4</em> with XGBoost on 20+ engineered features.</h4>
-          <p class="project-desc">Built moneyness, expiry-decay, and IV-outlier features lifting R² by 13.4%. Modeled volatility regimes on reshaped Parquet data — MAE 0.1051, 15.2% accuracy gain.</p>
-          <div class="project-metrics">
-            <span class="metric-chip">MSE 2e-4</span>
-            <span class="metric-chip">+13.4% R²</span>
-            <span class="metric-chip">XGBoost</span>
-          </div>
+          <h4 class="project-title">Forecasted <em>implied volatility</em> using XGBoost and engineered options features.</h4>
+          <p class="project-desc">Built moneyness, expiry-decay, and IV-outlier features that lifted R² and MAE on test data. Modelled volatility regimes on reshaped Parquet data and pruned noise to improve consistency across the test set.</p>
           <div class="project-meta"><span>06 / NK Securities</span><span>May – Jun '25</span></div>
         </article>
 
         <article class="project blue reveal">
           <span class="project-tag">Quant Quest · Qube Research</span>
-          <h4 class="project-title">Dollar-neutral strategy on <em>2,167 stocks</em> with a Sharpe of 1.33.</h4>
-          <p class="project-desc">Daily portfolio weights from trend, momentum, and volatility factors backtested across 15+ years of bull, bear, and high-vol regimes. A volatility filter lifted Sharpe by 14.6%.</p>
-          <div class="project-metrics">
-            <span class="metric-chip">Sharpe 1.33</span>
-            <span class="metric-chip">15+ yrs</span>
-            <span class="metric-chip">+14.6%</span>
-          </div>
+          <h4 class="project-title">Built a <em>dollar-neutral equity strategy</em> across thousands of NSE stocks.</h4>
+          <p class="project-desc">Designed daily portfolio weights from trend, momentum, and volatility factors and backtested across 15+ years of bull, bear, and high-vol regimes. A volatility filter on noisy signals lifted risk-adjusted returns.</p>
           <div class="project-meta"><span>07 / Qube Research Technologies</span><span>Mar – Apr '25</span></div>
         </article>
       </div>
@@ -997,11 +795,11 @@
   </section>
 
   <!-- ============================================================
-       VI — CONTACT
+       V — CONTACT
   ============================================================ -->
   <section id="contact" class="container contact">
     <div class="section-label">
-      <span class="num">06</span><span>Get in touch</span><span class="rule"></span>
+      <span class="num">05</span><span>Get in touch</span><span class="rule"></span>
     </div>
 
     <div class="contact-channels reveal">
