@@ -220,60 +220,58 @@
     .cta .arrow { transition: transform 0.25s ease; }
     .cta:hover .arrow { transform: translateX(4px); }
 
-    /* ---------- Executive Summary ---------- */
-    .exec-grid {
+    /* ---------- About ---------- */
+    .about-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 56px;
+      grid-template-columns: 1.55fr 1fr;
+      gap: 56px;
+      margin-top: 32px;
+      align-items: start;
     }
-    @media (max-width: 880px) { .exec-grid { grid-template-columns: 1fr; } }
-
-    .exec-card {
-      padding: 36px 32px;
+    @media (max-width: 880px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .about-lead {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-variation-settings: 'opsz' 36;
+      font-size: clamp(22px, 2.4vw, 30px);
+      line-height: 1.35;
+      letter-spacing: -0.015em;
+      color: var(--text);
+      margin-bottom: 22px;
+    }
+    .about-lead strong { font-weight: 600; color: var(--accent); }
+    .about-body {
+      font-size: 15.5px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .about-meta {
+      padding: 28px;
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 8px;
-      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-      overflow: hidden;
     }
-    .exec-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 4px;
-      background: var(--accent);
+    .meta-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
     }
-    .exec-card:nth-child(2)::before { background: var(--blue); }
-    .exec-card:nth-child(3)::before { background: var(--amber); }
-    .exec-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 40px -20px rgba(15, 15, 15, 0.18);
-    }
-    .exec-card .num {
+    .meta-row:first-child { padding-top: 0; }
+    .meta-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .meta-key {
       font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      color: var(--accent);
-      margin-bottom: 20px;
-      padding-top: 8px;
+      font-size: 10.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
     }
-    .exec-card:nth-child(2) .num { color: var(--blue); }
-    .exec-card:nth-child(3) .num { color: var(--amber); }
-    .exec-card h3 {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-size: 26px;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 14px;
-      color: var(--text);
-    }
-    .exec-card p {
+    .meta-val {
+      font-family: var(--sans);
       font-size: 14.5px;
-      color: var(--text-muted);
-      line-height: 1.6;
+      color: var(--text);
+      line-height: 1.45;
     }
 
     /* ---------- Featured chart ---------- */
@@ -382,11 +380,11 @@
     @media (max-width: 880px) { .project-grid { grid-template-columns: 1fr; } }
 
     .project {
-      padding: 36px 32px;
+      padding: 32px 30px;
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 8px;
-      display: flex; flex-direction: column; gap: 16px;
+      display: flex; flex-direction: column; gap: 10px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative; overflow: hidden;
     }
@@ -397,53 +395,43 @@
       background: var(--accent);
       transition: width 0.4s ease;
     }
+    .project.blue::before { background: var(--blue); }
     .project:hover {
       transform: translateY(-4px);
       box-shadow: 0 18px 40px -22px rgba(15, 15, 15, 0.18);
     }
     .project:hover::before { width: 100%; }
 
-    .project-tag {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: var(--mono);
-      font-size: 11px; letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-    }
-    .project-tag::before {
-      content: ''; width: 6px; height: 6px;
-      background: var(--accent); border-radius: 50%;
-    }
-    .project.blue .project-tag::before { background: var(--blue); }
-    .project.amber .project-tag::before { background: var(--amber); }
-
     .project-title {
       font-family: var(--serif);
-      font-size: clamp(22px, 2.2vw, 28px);
-      font-weight: 500;
-      font-variation-settings: 'opsz' 60;
-      line-height: 1.15;
-      letter-spacing: -0.025em;
+      font-size: clamp(20px, 2vw, 24px);
+      font-weight: 600;
+      font-variation-settings: 'opsz' 48;
+      line-height: 1.25;
+      letter-spacing: -0.018em;
       color: var(--text);
     }
-    .project-title em { color: var(--accent); font-style: italic; font-weight: 400; }
-    .project.blue .project-title em { color: var(--blue); }
-    .project.amber .project-title em { color: var(--amber); }
+    .project-title .project-sep {
+      font-weight: 400;
+      color: var(--text-dim);
+      margin: 0 4px;
+      font-style: italic;
+    }
+
+    .project-org {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2px;
+    }
+    .project.blue .project-org { color: var(--blue); }
 
     .project-desc {
       font-size: 14.5px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .project-meta {
-      display: flex; justify-content: space-between;
-      font-family: var(--mono);
-      font-size: 11px; letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      margin-top: auto;
-      padding-top: 12px;
+      color: var(--text-soft);
+      line-height: 1.65;
     }
 
     /* ---------- Contact ---------- */
@@ -563,12 +551,12 @@
     </div>
 
     <h1 class="hero-headline">
-      Product strategy,<br />
-      built on <em>numbers.</em>
+      Product strategy<br />
+      and <em>quantitative</em> work.
     </h1>
 
     <p class="hero-tagline">
-      I build the kind of analysis fintech decisions are actually made on — market-entry cases, vertical POVs, and 0-to-1 business cases backed by real user research, unit economics, and quantitative work that holds up under scrutiny.
+      Undergraduate at IIT Bombay. Independent product-strategy and quantitative-finance projects across fintech — market entry, vertical POVs, 0-to-1 business cases, and machine-learning work in equity markets, options, and consumer credit.
     </p>
 
     <div class="hero-footer">
@@ -581,35 +569,27 @@
   </header>
 
   <!-- ============================================================
-       II — EXECUTIVE SUMMARY
+       II — ABOUT
   ============================================================ -->
   <section id="summary" class="container">
     <div class="section-label">
-      <span class="num">02</span><span>Executive Summary</span><span class="rule"></span>
+      <span class="num">02</span><span>About</span><span class="rule"></span>
     </div>
 
-    <h2 class="action-title reveal">
-      Three reasons hiring me <em>compounds</em> for a strategy team.
-    </h2>
-    <p class="sub-headline reveal">
-      The interesting fintech bets sit where product judgement, market structure, and quantitative rigor meet. Here's why my work is built to live at that intersection.
-    </p>
-
-    <div class="exec-grid">
-      <div class="exec-card reveal">
-        <div class="num">01 / Strategy</div>
-        <h3>Product cases written like the CEO Office will actually read them.</h3>
-        <p>0-to-1 business cases backed by real user research, market sizing, and unit economics. Competitive teardowns, GTM plans, and build-vs-partner analyses — written like a recommendation, not a summary.</p>
+    <div class="about-grid reveal">
+      <div class="about-copy">
+        <p class="about-lead">
+          Working at the intersection of <strong>product strategy</strong> and <strong>quantitative finance</strong>. Recent focus areas: B2B fintech and SMB banking, embedded credit and consumer lending, market entry into emerging fintech markets, and customer analytics for subscription growth.
+        </p>
+        <p class="about-body">
+          Selected work spans market-entry strategy, fintech vertical POVs, 0-to-1 product business cases, and machine-learning projects across equity markets, options, and consumer credit. Tooling: Python, SQL, XGBoost, scikit-learn for the quantitative side; TAM/SAM/SOM, JTBD, unit economics, and Where-to-Play / How-to-Win for the strategy side.
+        </p>
       </div>
-      <div class="exec-card reveal">
-        <div class="num">02 / Market sense</div>
-        <h3>An informed point of view on where the fintech market is heading.</h3>
-        <p>I follow the structural shifts that matter — B2B becoming the next valuation lever, embedded credit going mainstream, AI moving from add-on to core infrastructure. I write about them with a thesis, not a summary.</p>
-      </div>
-      <div class="exec-card reveal">
-        <div class="num">03 / Evidence</div>
-        <h3>A quantitative backbone — used to settle arguments, not to show off.</h3>
-        <p>I default to evidence. Customer segmentation on real datasets, churn classifiers, backtested factor strategies. The point isn't the methodology — it's that the recommendations stay defensible when someone challenges them.</p>
+      <div class="about-meta">
+        <div class="meta-row"><span class="meta-key">Education</span><span class="meta-val">B.Tech, IIT Bombay (2023 – Present)</span></div>
+        <div class="meta-row"><span class="meta-key">Based in</span><span class="meta-val">Mumbai, India</span></div>
+        <div class="meta-row"><span class="meta-key">Available</span><span class="meta-val">Summer / Autumn 2026 internships</span></div>
+        <div class="meta-row"><span class="meta-key">Interests</span><span class="meta-val">Fintech, B2B banking, embedded credit, ML in markets</span></div>
       </div>
     </div>
   </section>
@@ -624,11 +604,11 @@
 
     <div class="featured reveal">
       <div class="featured-header">
-        <span class="featured-tag">Sector deep-dive</span>
+        <span class="featured-tag">Sample analysis · B2B fintech</span>
       </div>
-      <h3>Where I'd play in <em>B2B fintech</em> — the mid-market treasury wedge.</h3>
+      <h3>Competitive matrix: B2B fintech players on <em>product depth vs geographic reach</em>.</h3>
       <p class="featured-sub">
-        Mapping leading B2B players on product depth vs geographic reach surfaces a $12B underserved zone between SMB-focused neobanks and enterprise treasury giants. The wedge: globally available, mid-market grade, API-first treasury — exactly the gap most legacy banks treat as a side bet.
+        SMB-focused neobanks (Tide, Qonto, Mercury, Brex) compete on product but stay regional. Enterprise treasury sits with global incumbents (JPMorgan, HSBC). The mid-market, globally-available, API-first treasury segment is largely unserved — a roughly $12B wedge that anchors the underlying B2B vertical POV.
       </p>
 
       <!-- Inline SVG: 2x2 competitive matrix -->
@@ -717,11 +697,8 @@
       <span class="num">04</span><span>Selected Work</span><span class="rule"></span>
     </div>
 
-    <h2 class="action-title reveal">
-      The work, <em>in two tracks.</em>
-    </h2>
-    <p class="sub-headline reveal">
-      Strategy and product cases on the structural shifts shaping fintech today, alongside the quantitative work that taught me how to defend a recommendation.
+    <p class="sub-headline reveal" style="margin-top: 8px;">
+      Selected projects, organised by track. Detailed methodology and code available on request.
     </p>
 
     <!-- TRACK A — Product Strategy -->
@@ -733,31 +710,27 @@
 
       <div class="project-grid">
         <article class="project reveal">
-          <span class="project-tag">Market Entry · GTM</span>
-          <h4 class="project-title">Built a <em>market entry &amp; GTM strategy</em> for a neobank in an emerging fintech market.</h4>
-          <p class="project-desc">Sized the opportunity with a TAM/SAM/SOM model, ran a competitive teardown of eight local incumbents on product depth and unit economics, and designed a three-year GTM with a wedge product, pricing, and a build-vs-partner regulatory sequence.</p>
-          <div class="project-meta"><span>01 / Self-Initiated</span><span>Apr – May '26</span></div>
+          <h4 class="project-title">Fintech Market Entry &amp; GTM Strategy</h4>
+          <p class="project-org">Self-Initiated Research · Apr – May '26</p>
+          <p class="project-desc">Sized a $42B+ neobank opportunity in an emerging fintech market via TAM/SAM/SOM analysis. Conducted a competitive teardown of 8 incumbents across product depth, monetization, and unit economics to surface 3 strategic gaps. Designed a 3-year GTM roadmap with wedge product, pricing, and CAC/LTV benchmarks across 4 customer segments. Modelled a $180M Year-3 revenue scenario and proposed a build-vs-partner regulatory sequence across an 18-month rollout.</p>
         </article>
 
         <article class="project reveal">
-          <span class="project-tag">Vertical POV · B2B</span>
-          <h4 class="project-title">Authored a <em>strategic POV</em> on the global SMB banking opportunity.</h4>
-          <p class="project-desc">Deconstructed Brex, Mercury, Qonto, and Tide on product depth, monetization, and unit economics. Proposed three product bets — embedded credit, multi-currency treasury, and payroll APIs — sequenced into an 18-month roadmap with KPIs.</p>
-          <div class="project-meta"><span>02 / Sector Deep-Dive</span><span>Feb – Mar '26</span></div>
+          <h4 class="project-title">B2B Banking Strategy POV</h4>
+          <p class="project-org">Sector Deep-Dive · Feb – Mar '26</p>
+          <p class="project-desc">Authored a 25-page POV on the global SMB banking opportunity, deconstructing 5 leading players (Brex, Mercury, Qonto, Tide). Built a Where-to-Play / How-to-Win framework, identifying mid-market treasury as a $12B underserved wedge. Proposed 3 product bets — embedded credit, multi-currency treasury, payroll APIs — with 18-month sequencing and KPIs. Stress-tested the thesis against incumbent counter-moves, surfacing 2 defensibility risks and a partnership shortlist.</p>
         </article>
 
         <article class="project reveal">
-          <span class="project-tag">0-to-1 · Business Case</span>
-          <h4 class="project-title">Wrote a <em>0-to-1 product business case</em> for embedded credit inside a global payment app.</h4>
-          <p class="project-desc">Ran user interviews and a survey to map JTBD and intent-to-use. Modelled unit economics for LTV and payback, and pressure-tested a build-vs-buy decision across underwriting partners before locking the MVP scope and KPI tree.</p>
-          <div class="project-meta"><span>03 / 0-1 Product</span><span>Dec '25 – Jan '26</span></div>
+          <h4 class="project-title">0-1 Product Business Case <span class="project-sep">|</span> Embedded Credit</h4>
+          <p class="project-org">Independent Research · Dec '25 – Jan '26</p>
+          <p class="project-desc">Authored a 0-1 business case for an embedded credit product inside a global payment app, scoped from problem to MVP. Conducted 22 user interviews and an N=210 survey to map JTBD, surfacing a 64% intent-to-use signal. Modelled unit economics projecting $38 LTV and 18-month payback; ran build-vs-buy across 3 underwriting partners. Defined MVP scope, KPI tree, and guardrail metrics, mitigating fraud and cannibalization risks via a staggered rollout.</p>
         </article>
 
         <article class="project reveal">
-          <span class="project-tag">Analytics → Roadmap</span>
-          <h4 class="project-title">Translated <em>customer analytics</em> into a Premium-conversion product roadmap.</h4>
-          <p class="project-desc">Segmented a neobank transaction dataset with RFM analysis to surface a high-LTV upsell cohort, then built a gradient-boosted churn classifier whose features informed three product nudges, validated through a guardrail-aware A/B test framework.</p>
-          <div class="project-meta"><span>04 / Data Science</span><span>Oct – Nov '25</span></div>
+          <h4 class="project-title">Customer Analytics &amp; Product Roadmap</h4>
+          <p class="project-org">Data Science Project · Oct – Nov '25</p>
+          <p class="project-desc">Analysed a 100K-row neobank transaction dataset in Python/SQL via RFM segmentation to identify a high-LTV upsell cohort. Built a gradient-boosted churn model (AUC 0.84, F1 0.71), pinpointing 3 leading indicators of attrition. Translated model outputs into a 3-feature product roadmap projected to lift Premium conversion by 18%. Designed an A/B test framework with primary, guardrail, and counter-metric KPIs to validate experiments pre-rollout.</p>
         </article>
       </div>
     </div>
@@ -771,24 +744,21 @@
 
       <div class="project-grid">
         <article class="project blue reveal">
-          <span class="project-tag">QuantChallenge · Five Rings</span>
-          <h4 class="project-title">Built a <em>real-time, event-driven trading algorithm</em> on live basketball markets.</h4>
-          <p class="project-desc">Engineered time-series features from anonymised market events, built ensemble forecasters, and designed execution logic with liquidity constraints and dynamic position sizing to maximise risk-adjusted PnL.</p>
-          <div class="project-meta"><span>05 / Five Rings Capital</span><span>Sept '25</span></div>
+          <h4 class="project-title">QuantChallenge 2025 <span class="project-sep">|</span> Five Rings Capital</h4>
+          <p class="project-org">Trading Competition · Sept '25</p>
+          <p class="project-desc">Engineered time-series features from anonymised market events and built ensemble predictive models for forecasting on basketball-event markets. Designed real-time, event-driven trading algorithms in Python — calculating fair market price and quoting dynamic, statistical bid/ask spreads to maximise risk-adjusted PnL. Optimised execution logic with liquidity constraints and dynamic position sizing for robust alpha.</p>
         </article>
 
         <article class="project blue reveal">
-          <span class="project-tag">ML · IV Forecasting</span>
-          <h4 class="project-title">Forecasted <em>implied volatility</em> using XGBoost and engineered options features.</h4>
-          <p class="project-desc">Built moneyness, expiry-decay, and IV-outlier features that lifted R² and MAE on test data. Modelled volatility regimes on reshaped Parquet data and pruned noise to improve consistency across the test set.</p>
-          <div class="project-meta"><span>06 / NK Securities</span><span>May – Jun '25</span></div>
+          <h4 class="project-title">Implied Volatility Forecasting <span class="project-sep">|</span> NK Securities</h4>
+          <p class="project-org">ML Challenge · May – Jun '25</p>
+          <p class="project-desc">Built a regression model with XGBoost, forecasting implied volatility with a low MSE of 2e-4 on test data. Engineered 20+ domain-specific features (moneyness, expiry decay, IV outliers) to boost overall R² by 13.4%. Reduced volatility-induced noise via targeted feature pruning, achieving an MAE of 0.1051. Reshaped Parquet data and modelled volatility regimes for a 15.2% lift in accuracy.</p>
         </article>
 
         <article class="project blue reveal">
-          <span class="project-tag">Quant Quest · Qube Research</span>
-          <h4 class="project-title">Built a <em>dollar-neutral equity strategy</em> across thousands of NSE stocks.</h4>
-          <p class="project-desc">Designed daily portfolio weights from trend, momentum, and volatility factors and backtested across 15+ years of bull, bear, and high-vol regimes. A volatility filter on noisy signals lifted risk-adjusted returns.</p>
-          <div class="project-meta"><span>07 / Qube Research Technologies</span><span>Mar – Apr '25</span></div>
+          <h4 class="project-title">Risk-Adjusted Alpha Strategy <span class="project-sep">|</span> Qube Research Technologies</h4>
+          <p class="project-org">Quant Quest · Mar – Apr '25</p>
+          <p class="project-desc">Built a dollar-neutral equity strategy over 2,167 NSE stocks using alpha signals from price-volume features. Designed daily portfolio weights from trend, momentum, and volatility factors, yielding a Sharpe Ratio of 1.330. Backtested 15+ years of historical alpha data across bull, bear, and volatile regimes; a volatility filter on noisy signals improved Sharpe by 14.6%.</p>
         </article>
       </div>
     </div>
@@ -832,8 +802,7 @@
   ============================================================ -->
   <footer>
     <div class="footer-inner">
-      <span>© 2026 Darshan Sonawane</span>
-      <span>Designed &amp; built solo · No template, no AI veneer</span>
+      <span>© 2026 Darshan Sonawane · Mumbai, India</span>
       <span><a href="#cover">Back to top ↑</a></span>
     </div>
   </footer>
